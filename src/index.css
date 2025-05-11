@@ -1,1 +1,5 @@
-@import "tailwindcss";
+@import "@fontsource/inter";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
