@@ -1,16 +1,11 @@
+// src/main.tsx
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
-import Hero from "./sections/Hero.tsx";
-import NavBar from "./sections/NavBar.tsx";
-import "./index.css"; // 👈 Tailwind MUST be imported here
-
+import App from "./App.tsx"; // ✅ App is the root component
+import "./index.css"; // ✅ Tailwind styles are loaded here
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <App />
-    <Hero/>
-    <NavBar />
-    
   </React.StrictMode>
 );

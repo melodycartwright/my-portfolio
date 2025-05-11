@@ -1,14 +1,15 @@
-export default function Hero() {
+function Hero() {
   return (
-    <section id="hero" className="h-screen flex flexcol justify-center items-center text-center bg-background px-4">
-      <h1 className="text-5xl font-extrabold text-gray-800 mb-4">
-        Frontend Developer & Web Security Enthusiast
+    <section className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-gray-50">
+      <h1 className="text-5xl sm:text-6xl font-extrabold text-gray-800 mb-6 leading-tight">
+        Frontend Developer with a Focus on Web Security
       </h1>
-      <p className="text-lg text-gray-600 max-w-xl">
-        Hi, I’m Melody. I create clean, responsive UIs using React, TypeScript,
-        and Tailwind CSS — with a focus on accessibility and security.
+      <p className="text-lg sm:text-xl text-gray-600 max-w-2xl">
+        Hi, I’m Melody. I build beautiful, accessible, and secure user
+        interfaces using React, TypeScript, and Tailwind CSS.
       </p>
     </section>
   );
 }
 
+export default Hero;
