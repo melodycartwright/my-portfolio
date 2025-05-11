@@ -1,6 +1,6 @@
-function Hero() {
+export default function Hero() {
   return (
-    <section className="min-h-[80vh] flex flex-col justify-center items-center text-center px-4 bg-gray-50">
+    <section id="hero" className="h-screen flex flexcol justify-center items-center text-center bg-background px-4">
       <h1 className="text-5xl font-extrabold text-gray-800 mb-4">
         Frontend Developer & Web Security Enthusiast
       </h1>
@@ -12,4 +12,3 @@ function Hero() {
   );
 }
 
-export default Hero;
