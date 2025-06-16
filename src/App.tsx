@@ -1,19 +1,17 @@
-// src/App.tsx
 import Hero from "./sections/Hero";
-import NavBar from "./sections/NavBar";
 import Projects from "./sections/Projects";
 import About from "./sections/About";
 import Contact from "./sections/Contact";
-function App() {
+import Footer from "./components/Footer";
+
+export default function App() {
   return (
-    <>
-      <NavBar />
+    <div className="flex flex-col min-h-screen">
       <Hero />
-    <Projects />
-    <About />
-    <Contact/>
-    </>
+      <Projects />
+      <About />
+      <Contact />
+      <Footer />
+    </div>
   );
 }
-
-export default App;
