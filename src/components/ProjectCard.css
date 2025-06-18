@@ -1,0 +1,19 @@
+.underline-link {
+    position: relative;
+    display: inline-block;
+}
+
+.underline-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background-color: currentColor;
+    transition: width 300ms ease;
+}
+
+.underline-link:hover::after {
+    width: 100%;
+}

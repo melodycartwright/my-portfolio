@@ -1,4 +1,5 @@
-import type { Project } from "../components/ProjectCard";
+import type { Project } from "../types/Project";
+import placeholder from "../assets/placeholder-project.jpg";
 
 export const projects: Project[] = [
   {
@@ -6,21 +7,27 @@ export const projects: Project[] = [
     title: "Portfolio Website",
     description:
       "My personal portfolio built with React, TypeScript, and Tailwind.",
-    image: "https://via.placeholder.com/400x200",
+    image: placeholder,
+
     url: "#",
+    tech: ["React", "TypeScript", "Tailwind"],
   },
   {
     id: 2,
     title: "Weather App",
     description: "A weather forecasting app using OpenWeather API.",
-    image: "https://via.placeholder.com/400x200",
+    image: placeholder,
+
     url: "#",
+    tech: ["React", "API", "CSS"],
   },
   {
     id: 3,
     title: "E-commerce Webshop",
     description: "A fullstack webshop built with the MERN stack.",
-    image: "https://via.placeholder.com/400x200",
+    image: placeholder,
+
     url: "#",
+    tech: ["MongoDB", "Express", "React", "Node.js"],
   },
 ];
