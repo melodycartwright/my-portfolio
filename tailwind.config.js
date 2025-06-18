@@ -4,18 +4,25 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        charcoal: "#1f2937", // dark text 
-        softwhite: "#f8fafc", // background 
-        blush: "#f5e7e5", // muted blush 
-        sage: "#dfeeea", // soft sage green
-        
-        primary: "#1e3a8a",
-        secondary: "#38bdf8",
-        accent: "#facc15",
+        // Backgrounds and base tones
+        softwhite: "#f7f7f7", 
+        charcoal: "#1e1e1e", 
+
+        // Accents
+        blush: "#e1bebe", 
+        sage: "#b4d3c8",
+
+       
+        indigo: "#5e6472", 
+        slate: "#3b3f58", 
+
+        // hover
+        blushHover: "#e9cfcf",
+        sageHover: "#cde0d8",
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"], // for body text
-        serif: ["Playfair Display", "serif"], // for headings
+        sans: ["Inter", "sans-serif"],
+        serif: ["Playfair Display", "serif"],
       },
     },
   },

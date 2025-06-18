@@ -1,16 +1,20 @@
-import Hero from "./sections/Hero";
-import Projects from "./sections/Projects";
-import About from "./sections/About";
-import Contact from "./sections/Contact";
+
+import { Routes, Route } from "react-router-dom";
+import Home from "./routes/Home";
+import About from "./routes/About";
+import Projects from "./routes/Projects";
+import Contact from "./routes/Contact";
 import Footer from "./components/Footer";
 
 export default function App() {
   return (
     <div className="flex flex-col min-h-screen">
-      <Hero />
-      <Projects />
-      <About />
-      <Contact />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
       <Footer />
     </div>
   );

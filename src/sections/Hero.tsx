@@ -1,15 +1,45 @@
-function Hero() {
+import { Link } from "react-router-dom";
+import profileImage from "../assets/melody.jpg"; // Make sure this path is correct
+
+export default function Hero() {
   return (
-    <section
-      id="hero"
-      className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-gray-50"
-    >
-      <h1 className="text-4xl font-serif">Hi, I'm Melody</h1>
-      <p className="text-lg sm:text-xl mt-2 font-sans text-gray-600 max-w-2xl">
-        Frontend Developer with a Focus on Web Security
-      </p>
+    <section className="hero-section text-charcoal bg-softwhite py-16 px-6 flex flex-col md:flex-row items-center justify-between">
+      {/* LEFT TEXT BLOCK */}
+      <div className="md:w-1/2 text-center md:text-left space-y-6">
+        <h1 className="text-4xl md:text-5xl font-serif font-bold leading-tight">
+          Hi, I’m Melody.
+        </h1>
+
+        <p className="text-lg font-sans max-w-md">
+          A frontend developer focused on security, beautiful design, and
+          responsive web experiences.
+        </p>
+
+        <div className="flex justify-center md:justify-start gap-4">
+          <Link
+            to="/about"
+            className="px-6 py-2 rounded-full font-medium bg-blush text-charcoal border border-blush hover:bg-[#e9cfcf] transition-all duration-200"
+          >
+            Learn More
+          </Link>
+
+          <Link
+            to="/projects"
+            className="px-6 py-2 rounded-full font-medium bg-sage text-charcoal border border-sage hover:bg-[#cde0d8] transition-all duration-200"
+          >
+            View Projects
+          </Link>
+        </div>
+      </div>
+
+      {/* RIGHT IMAGE BLOCK */}
+      <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+        <img
+          src={profileImage}
+          alt="Melody Cartwright"
+          className="rounded-2xl shadow-lg w-64 h-64 object-cover"
+        />
+      </div>
     </section>
   );
 }
-
-export default Hero;
