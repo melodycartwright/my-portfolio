@@ -5,6 +5,7 @@ import "./ProjectCard.css";
 
 interface ProjectCardProps extends Project {
   variant?: "preview" | "full";
+  index?: number;
 }
 
 export default function ProjectCard({
@@ -15,13 +16,22 @@ export default function ProjectCard({
   url,
   tech,
   variant = "preview",
+  index = 0,
 }: ProjectCardProps) {
   const isPreview = variant === "preview";
+  const isEven = index % 2 === 0;
+
+  const layoutClass =
+    !isPreview && isEven
+      ? "md:flex md:flex-row"
+      : !isPreview
+      ? "md:flex md:flex-row-reverse"
+      : "";
 
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
-      className="bg-white shadow-md rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg"
+      className={`bg-white shadow-md rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg ${layoutClass}`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -52,18 +62,24 @@ export default function ProjectCard({
               )}
             </div>
 
-            <span className="relative inline-block text-sm font-medium text-slate-700 mt-4">
+            <span className="relative inline-block text-sm font-medium text-slate-700 mt-4 group">
               View Project →
               <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-sage transition-all duration-300 group-hover:w-full"></span>
             </span>
           </div>
         </Link>
       ) : (
-        <div className="h-full">
-          <img src={image} alt={title} className="w-full h-48 object-cover" />
-          <div className="p-6 flex flex-col h-full justify-between space-y-4">
+        <>
+          <div className="md:w-1/2">
+            <img src={image} alt={title} className="w-full h-64 object-cover" />
+          </div>
+          <div className="p-6 flex flex-col justify-between space-y-4 md:w-1/2">
             <div className="space-y-4 flex-grow">
-              <h3 className="text-xl font-serif font-semibold">{title}</h3>
+              <h3 className="text-2xl font-serif font-semibold relative inline-block group">
+                {title}
+                <span className="block h-[2px] w-0 bg-sage group-hover:w-full transition-all duration-300"></span>
+              </h3>
+
               <p className="text-sm text-gray-700 font-sans">{description}</p>
 
               {tech && (
@@ -79,8 +95,19 @@ export default function ProjectCard({
                 </ul>
               )}
             </div>
+            {url && (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative inline-block text-sm font-medium text-slate-700 group"
+              >
+                View Project →
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-sage transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            )}
           </div>
-        </div>
+        </>
       )}
     </motion.div>
   );

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import placeholder from "../assets/placeholder-project.jpg";
 import ProjectCard from "../components/ProjectCard";
 import { projects } from "../data/projects";
 import '../components/ProjectCard.css'
