@@ -3,8 +3,7 @@ import profileImage from "../assets/melody.jpg"; // Make sure this path is corre
 
 export default function Hero() {
   return (
-    <section className="hero-section text-charcoal bg-softwhite py-16 px-6 flex flex-col md:flex-row items-center justify-between">
-      {/* LEFT TEXT BLOCK */}
+    <section className="relative bg-softwhite dark:bg-charcoal text-charcoal dark:text-white py-20 px-4">
       <div className="md:w-1/2 text-center md:text-left space-y-6">
         <h1 className="text-4xl md:text-5xl font-serif font-bold leading-tight">
           Hi, I’m Melody.

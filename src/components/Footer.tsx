@@ -3,7 +3,7 @@ import { Github, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-gray-100 text-center text-sm py-4 mt-auto">
+    <footer className="bg-sage dark:bg-charcoal text-charcoal dark:text-white py-6 text-center text-sm font-inter">
       <p className="text-gray-600">
         {" "}
         copy; {new Date().getFullYear()} Melody Cartwright. All rights reserved.{" "}
