@@ -6,17 +6,11 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Projects() {
   const [isStacked, setIsStacked] = useState(false);
 
-  // Load layout preference from localStorage
   useEffect(() => {
     const savedLayout = localStorage.getItem("projectLayout");
-    if (savedLayout === "stacked") {
-      setIsStacked(true);
-    } else {
-      setIsStacked(false);
-    }
+    setIsStacked(savedLayout === "stacked");
   }, []);
 
-  // Save layout to localStorage
   const handleToggleLayout = () => {
     const newLayout = !isStacked;
     setIsStacked(newLayout);
@@ -32,7 +26,6 @@ export default function Projects() {
       transition={{ staggerChildren: 0.2 }}
     >
       <div className="max-w-6xl mx-auto space-y-12">
-        {/* Header */}
         <motion.h2
           className="text-4xl md:text-5xl font-serif font-bold text-center"
           initial={{ opacity: 0, y: 40 }}
@@ -42,7 +35,6 @@ export default function Projects() {
           All Projects
         </motion.h2>
 
-        {/* Toggle button for layout */}
         <div className="flex justify-center">
           <button
             onClick={handleToggleLayout}
@@ -52,34 +44,29 @@ export default function Projects() {
           </button>
         </div>
 
-        {/* Project Cards */}
-        <div
-          className={
-            isStacked ? "space-y-20" : "grid grid-cols-1 md:grid-cols-2 gap-12"
-          }
-        >
-          <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={isStacked ? "stacked" : "grid"}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -40 }}
+            transition={{ duration: 0.4 }}
+            className={
+              isStacked
+                ? "space-y-20"
+                : "grid grid-cols-1 md:grid-cols-2 gap-12"
+            }
+          >
             {projects.map((project, index) => (
-              <motion.div
+              <ProjectCard
                 key={project.id}
-                initial={{
-                  opacity: 0,
-                  x: isStacked ? -40 : 0,
-                  y: isStacked ? 0 : 40,
-                }}
-                animate={{ opacity: 1, x: 0, y: 0 }}
-                exit={{
-                  opacity: 0,
-                  x: isStacked ? 40 : 0,
-                  y: isStacked ? 0 : -40,
-                }}
-                transition={{ duration: 0.5 }}
-              >
-                <ProjectCard {...project} variant="full" index={index} />
-              </motion.div>
+                {...project}
+                variant="full"
+                index={index}
+              />
             ))}
-          </AnimatePresence>
-        </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </motion.section>
   );
