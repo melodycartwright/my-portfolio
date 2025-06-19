@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { projects } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 import { motion } from "framer-motion";
 
 export default function Projects() {
+  const [isStacked, setIsStacked] = useState(false); // default to grid view
+
   return (
     <motion.section
       className="bg-softwhite text-charcoal py-20 px-6"
@@ -21,7 +24,37 @@ export default function Projects() {
           All Projects
         </motion.h2>
 
-        <div className="space-y-20">
+        {/* Toggle Buttons */}
+        <div className="flex justify-end gap-2">
+          <button
+            onClick={() => setIsStacked(false)}
+            className={`px-4 py-1 border rounded-full transition ${
+              !isStacked
+                ? "bg-sage text-white border-sage"
+                : "bg-white text-sage border-gray-300"
+            }`}
+          >
+            Grid View
+          </button>
+          <button
+            onClick={() => setIsStacked(true)}
+            className={`px-4 py-1 border rounded-full transition ${
+              isStacked
+                ? "bg-sage text-white border-sage"
+                : "bg-white text-sage border-gray-300"
+            }`}
+          >
+            Stacked View
+          </button>
+        </div>
+
+        <div
+          className={`${
+            isStacked
+              ? "space-y-20" // stacked = vertical list
+              : "grid md:grid-cols-2 gap-12" // grid = 2 columns
+          }`}
+        >
           {projects.map((project, index) => (
             <ProjectCard
               key={project.id}
