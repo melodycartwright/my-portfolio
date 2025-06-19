@@ -75,10 +75,13 @@ export default function ProjectCard({
           </div>
           <div className="p-6 flex flex-col justify-between space-y-4 md:w-1/2">
             <div className="space-y-4 flex-grow">
-              <h3 className="text-2xl font-serif font-semibold relative inline-block group">
+              <Link
+                to={`/projects/${id}`}
+                className="group text-2xl font-serif font-semibold relative inline-block w-fit"
+              >
                 {title}
                 <span className="block h-[2px] w-0 bg-sage group-hover:w-full transition-all duration-300"></span>
-              </h3>
+              </Link>
 
               <p className="text-sm text-gray-700 font-sans">{description}</p>
 
@@ -95,17 +98,6 @@ export default function ProjectCard({
                 </ul>
               )}
             </div>
-            {url && (
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative inline-block text-sm font-medium text-slate-700 group"
-              >
-                View Project →
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-sage transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            )}
           </div>
         </>
       )}

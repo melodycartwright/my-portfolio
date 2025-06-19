@@ -3,6 +3,7 @@ import { projects } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 import { motion, AnimatePresence } from "framer-motion";
 
+
 export default function Projects() {
   const [isStacked, setIsStacked] = useState(false);
 
@@ -58,12 +59,10 @@ export default function Projects() {
             }
           >
             {projects.map((project, index) => (
-              <ProjectCard
-                key={project.id}
-                {...project}
-                variant="full"
-                index={index}
-              />
+             
+                <ProjectCard key={project.id} {...project} variant="full" index={index} />
+
+           
             ))}
           </motion.div>
         </AnimatePresence>

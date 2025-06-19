@@ -1,5 +1,6 @@
 
 import { Routes, Route } from "react-router-dom";
+import Navbar from "./sections/NavBar";
 import Home from "./routes/Home";
 import About from "./routes/About";
 import Projects from "./routes/Projects";
@@ -10,6 +11,7 @@ import ProjectDetail from "./routes/ProjectDetail";
 export default function App() {
   return (
     <div className="flex flex-col min-h-screen">
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
