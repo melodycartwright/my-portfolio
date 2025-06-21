@@ -9,7 +9,7 @@ export default function ProjectsPreview() {
 
   return (
     <motion.section
-      className="bg-softwhite text-charcoal py-20 px-6"
+      className="bg-softwhite dark:bg-charcoal dark:text-softwhite text-charcoal py-20 px-6"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false, amount: 0.2 }}

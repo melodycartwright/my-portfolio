@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { projects } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 import { motion, AnimatePresence } from "framer-motion";
-
+import { LayoutGrid, AlignJustify } from "lucide-react";
 
 export default function Projects() {
   const [isStacked, setIsStacked] = useState(false);
@@ -20,7 +20,7 @@ export default function Projects() {
 
   return (
     <motion.section
-      className="bg-softwhite text-charcoal py-20 px-6"
+      className="bg-softwhite dark:bg-charcoal text-charcoal dark:text-white min-h-screen px-4 py-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false, amount: 0.2 }}
@@ -39,9 +39,10 @@ export default function Projects() {
         <div className="flex justify-center">
           <button
             onClick={handleToggleLayout}
-            className="px-4 py-2 rounded-full bg-blush text-charcoal font-medium hover:bg-sage transition duration-300"
+            className="flex items-center gap-2 px-5 py-2 rounded-full border font-medium bg-white dark:bg-[#1f1f1f] border-gray-300 dark:border-gray-600 text-charcoal dark:text-softwhite hover:bg-sage dark:hover:bg-sage transition-all duration-300"
           >
-            Switch to {isStacked ? "Grid" : "Stacked"} View
+            {isStacked ? <LayoutGrid size={18} /> : <AlignJustify size={18} />}
+            {isStacked ? "Grid View" : "Stacked View"}
           </button>
         </div>
 
@@ -55,14 +56,16 @@ export default function Projects() {
             className={
               isStacked
                 ? "space-y-20"
-                : "grid grid-cols-1 md:grid-cols-2 gap-12"
+                : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
             }
           >
             {projects.map((project, index) => (
-             
-                <ProjectCard key={project.id} {...project} variant="full" index={index} />
-
-           
+              <ProjectCard
+                key={project.id}
+                {...project}
+                variant="full"
+                index={index}
+              />
             ))}
           </motion.div>
         </AnimatePresence>

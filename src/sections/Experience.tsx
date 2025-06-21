@@ -9,7 +9,7 @@ import gitLogo from "../assets/logo/gitLogo.png";
 export default function Experience() {
   return (
     <motion.section
-      className="bg-softwhite text-charcoal py-20 px-6"
+    className="bg-white dark:bg-charcoal text-charcoal dark:text-white py-16 px-4"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false, amount: 0.2 }} // animate again if re-entered

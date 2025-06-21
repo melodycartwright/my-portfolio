@@ -37,8 +37,14 @@ export default function Navbar() {
   }
 
   return (
-    <header className="w-full fixed top-0 left-0 z-50 bg-white dark:bg-charcoal shadow-sm">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <header className="w-full fixed top-0 left-0 z-50 bg-white/60 dark:bg-charcoal/60 backdrop-blur-sm shadow-sm">
+      <motion.nav
+  className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.4, ease: "easeOut" }}
+>
+
         {/* Logo */}
         <Link
           to="/"
@@ -62,8 +68,7 @@ export default function Navbar() {
           ))}
         </div>
 
-       
-        <div className="flex items-center md:hidden space-x-4">
+        <div className="flex items-center  space-x-4">
           {/* Dark mode toggle */}
           <button
             onClick={toggleTheme}
@@ -104,7 +109,7 @@ export default function Navbar() {
           {/* Mobile menu */}
           <button
             onClick={() => setIsOpen((prev) => !prev)}
-            className="text-charcoal dark:text-white"
+            className="md:hidden text-charcoal dark:text-white"
             aria-label="Toggle menu"
           >
             <svg
@@ -130,7 +135,7 @@ export default function Navbar() {
             </svg>
           </button>
         </div>
-      </nav>
+      </motion.nav>
 
       {/* Mobile dropdown*/}
       <AnimatePresence>
