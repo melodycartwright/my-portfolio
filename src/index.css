@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
 @import "@fontsource/inter";
+@import "keen-slider/keen-slider.min.css";
+
 
 @tailwind base;
 @tailwind components;

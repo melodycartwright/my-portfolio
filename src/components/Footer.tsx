@@ -1,5 +1,7 @@
 
 import { Github, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
+
 
 const Footer = () => {
   return (
@@ -45,6 +47,14 @@ const Footer = () => {
         >
           CV (Svenska)
         </a>
+      </div>
+      <div className="mt-4">
+        <Link
+          to="/contact"
+          className="inline-block px-5 py-2 text-sm font-medium bg-sage text-charcoal rounded-full border border-sage hover:bg-[#cde0d8] transition"
+        >
+          Contact Me
+        </Link>
       </div>
     </footer>
   );

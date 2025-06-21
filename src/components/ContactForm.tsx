@@ -20,7 +20,7 @@ export default function ContactForm( { compact = false}: Props) {
 
   const onSubmit = (data: FormData) => {
     console.log("📨 Form submitted:", data);
-    reset(); // Clear form on submit
+    reset();
   };
 
   return (

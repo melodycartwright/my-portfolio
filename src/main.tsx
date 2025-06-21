@@ -2,6 +2,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
+import "keen-slider/keen-slider.min.css";
 import App from "./App.tsx";
 import "./index.css";
 

@@ -1,21 +1,23 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { projects } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 import { motion, AnimatePresence } from "framer-motion";
 import { LayoutGrid, AlignJustify } from "lucide-react";
 
 export default function Projects() {
-  const [isStacked, setIsStacked] = useState(false);
-
-  useEffect(() => {
-    const savedLayout = localStorage.getItem("projectLayout");
-    setIsStacked(savedLayout === "stacked");
-  }, []);
+  const [isStacked, setIsStacked] = useState(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("projectLayout") === "stacked";
+    }
+    return false;
+  });
+  
 
   const handleToggleLayout = () => {
     const newLayout = !isStacked;
     setIsStacked(newLayout);
     localStorage.setItem("projectLayout", newLayout ? "stacked" : "grid");
+    window.scrollTo({top:0, behavior:"smooth"});
   };
 
   return (
@@ -53,11 +55,11 @@ export default function Projects() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -40 }}
             transition={{ duration: 0.4 }}
-            className={
+            className={`min-h-[400px] ${
               isStacked
                 ? "space-y-20"
                 : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-            }
+            }`}
           >
             {projects.map((project, index) => (
               <ProjectCard

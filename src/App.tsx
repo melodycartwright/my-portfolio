@@ -1,15 +1,18 @@
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./sections/NavBar";
+import ScrollToTop from "./ScrollToTop";
+import Navbar from "./sections/shared/NavBar";
 import Home from "./routes/Home";
-import About from "./routes/About";
+import About from "./routes/About"
 import Projects from "./routes/Projects";
 import Contact from "./routes/Contact";
 import Footer from "./components/Footer";
 import ProjectDetail from "./routes/ProjectDetail";
 import ContactForm from "./components/ContactForm";
+
 export default function App() {
   return (
     <div className="flex flex-col min-h-screen">
+      <ScrollToTop />
       <Navbar />
       <main className="pt-16">
         <Routes>
