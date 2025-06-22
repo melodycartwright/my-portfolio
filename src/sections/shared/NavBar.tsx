@@ -48,13 +48,12 @@ export default function Navbar() {
           to="/"
           className="text-xl sm:text-2xl font-playfair tracking-wide text-charcoal dark:text-white"
         >
-          <span className="font-bold">Melody</span>
-          <span className="text-blush">.dev</span>
+          <span className="font-bold">&lt;Melody</span>
+          <span className="text-blush">.dev /&gt;</span>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-6 text-sm sm:text-base font-inter
- text-charcoal dark:text-white">
+        <div className="hidden md:flex items-center space-x-6 text-sm font-inter text-charcoal dark:text-white">
           {navLinks.map(({ path, label }) => (
             <NavLink
               key={path}
