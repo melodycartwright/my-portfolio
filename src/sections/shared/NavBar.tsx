@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +14,6 @@ export default function Navbar() {
     { path: "/contact", label: "Contact" },
   ];
 
-  
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     if (
@@ -28,7 +28,6 @@ export default function Navbar() {
     }
   }, []);
 
-
   function toggleTheme() {
     const newTheme = isDark ? "light" : "dark";
     localStorage.setItem("theme", newTheme);
@@ -39,36 +38,63 @@ export default function Navbar() {
   return (
     <header className="w-full fixed top-0 left-0 z-50 bg-white/60 dark:bg-charcoal/60 backdrop-blur-sm shadow-sm">
       <motion.nav
-  className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
-  initial={{ opacity: 0, y: -20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.4, ease: "easeOut" }}
->
-
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+      >
         {/* Logo */}
         <Link
           to="/"
-          className="text-2xl font-bold font-playfair text-charcoal dark:text-white"
+          className="text-xl sm:text-2xl font-playfair tracking-wide text-charcoal dark:text-white"
         >
-          Melody.dev
+          <span className="font-bold">Melody</span>
+          <span className="text-blush">.dev</span>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex space-x-6 text-sm font-inter text-charcoal dark:text-white">
+        <div className="hidden md:flex items-center space-x-6 text-sm sm:text-base font-inter
+ text-charcoal dark:text-white">
           {navLinks.map(({ path, label }) => (
             <NavLink
               key={path}
               to={path}
               className={({ isActive }) =>
-                isActive ? "underline" : "hover:underline"
+                `relative group px-2 md:px-3 font-medium transition ${
+                  isActive ? "text-blush" : "hover:text-blush"
+                }`
               }
             >
-              {label}
+              <span className="relative z-10">{label}</span>
+              <span className="absolute left-0 -bottom-0.5 h-[2px] w-full scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100 bg-blush" />
             </NavLink>
           ))}
+
+          {/* Desktop Social Icons */}
+          <div className="flex items-center gap-3 pl-4">
+            <a
+              href="https://github.com/melodycartwright"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="hover:text-blush transition"
+            >
+              <FaGithub size={18} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/melody-cartwright-5ab18a1b6"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="hover:text-blush transition"
+            >
+              <FaLinkedin size={18} />
+            </a>
+          </div>
         </div>
 
-        <div className="flex items-center  space-x-4">
+        {/* Right-side: Theme toggle + Mobile menu */}
+        <div className="flex items-center space-x-4">
           {/* Dark mode toggle */}
           <button
             onClick={toggleTheme}
@@ -106,7 +132,7 @@ export default function Navbar() {
             )}
           </button>
 
-          {/* Mobile menu */}
+          {/* Mobile menu toggle */}
           <button
             onClick={() => setIsOpen((prev) => !prev)}
             className="md:hidden text-charcoal dark:text-white"
@@ -137,7 +163,7 @@ export default function Navbar() {
         </div>
       </motion.nav>
 
-      {/* Mobile dropdown*/}
+      {/* Mobile dropdown */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -152,13 +178,37 @@ export default function Navbar() {
                   key={path}
                   to={path}
                   className={({ isActive }) =>
-                    isActive ? "underline" : "hover:underline"
+                    `font-medium ${
+                      isActive ? "text-blush underline" : "hover:text-blush"
+                    }`
                   }
                   onClick={() => setIsOpen(false)}
                 >
                   {label}
                 </NavLink>
               ))}
+
+              {/* Mobile Social Icons */}
+              <div className="flex gap-4 pt-4">
+                <a
+                  href="https://github.com/melodycartwright"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className="hover:text-blush transition"
+                >
+                  <FaGithub size={20} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/melody-cartwright-5ab18a1b6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="hover:text-blush transition"
+                >
+                  <FaLinkedin size={20} />
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
