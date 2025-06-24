@@ -1,57 +1,45 @@
-import { Link } from "react-router-dom";
+// src/sections/home/Hero.tsx
+
 import { motion } from "framer-motion";
-import profileImage from "../../assets/melody.jpg";
+import { Link } from "react-router-dom";
+import profileImg from "../../assets/melody.png";
 
 export default function Hero() {
   return (
-    <section className="relative bg-softwhite dark:bg-charcoal text-charcoal dark:text-white py-20 px-4">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12">
-        {/* LEFT TEXT BLOCK */}
-        <motion.div
-          className="md:w-1/2 text-center md:text-left space-y-6"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <h1 className="text-4xl md:text-5xl font-serif font-bold leading-tight">
-            Hi, I’m Melody.
+    <section className="w-full min-h-screen flex items-center justify-center bg-softWhite dark:bg-charcoal px-4 sm:px-8 relative overflow-hidden">
+      <div className="max-w-7xl w-full flex flex-col-reverse lg:flex-row items-center justify-between gap-12 py-20">
+        {/* Text Content */}
+        <div className="flex-1 text-center lg:text-left space-y-6">
+          <h1 className="text-4xl sm:text-5xl font-playfair text-charcoal dark:text-white font-bold">
+            Melody Cartwright
           </h1>
-
-          <p className="text-lg font-sans max-w-md mx-auto md:mx-0">
-            A frontend developer focused on security, beautiful design, and
-            responsive web experiences.
-          </p>
-
-          <div className="flex justify-center md:justify-start gap-4">
+          <h2 className="text-xl sm:text-2xl font-inter text-muted">
+            Web Developer
+          </h2>
+          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
             <Link
-              to="/about"
-              className="px-6 py-2 rounded-full font-medium bg-blush text-charcoal border border-blush hover:bg-[#e9cfcf] transition-all duration-200"
+              to="https://github.com/melodycartwright"
+              className="px-5 py-2 rounded bg-blush text-white font-medium hover:bg-blush/80 transition"
             >
-              Learn More
+              GitHub
             </Link>
-
             <Link
-              to="/projects"
-              className="px-6 py-2 rounded-full font-medium bg-sage text-charcoal border border-sage hover:bg-[#cde0d8] transition-all duration-200"
+              to="/contact"
+              className="px-5 py-2 rounded border-2 border-blush text-blush font-medium hover:bg-blush hover:text-white transition"
             >
-              View Projects
+              Contact
             </Link>
           </div>
-        </motion.div>
+        </div>
 
-        {/* RIGHT IMAGE BLOCK */}
-        <motion.div
-          className="md:w-1/2 flex justify-center"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-        >
+        {/* Profile Image */}
+        <div className="flex-1 flex justify-center relative">
           <img
-            src={profileImage}
+            src={profileImg}
             alt="Melody Cartwright"
-            className="rounded-2xl shadow-lg w-full max-w-xs object-cover"
+            className="w-64 h-64 rounded-full object-cover shadow-lg border-4 border-blush"
           />
-        </motion.div>
+        </div>
       </div>
     </section>
   );

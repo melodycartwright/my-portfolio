@@ -46,9 +46,9 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           to="/"
-          className="text-xl sm:text-2xl font-playfair tracking-wide text-charcoal dark:text-white"
+          className="text-xl sm:text-2xl font-playfair tracking-wide text-charcoal dark:text-white flex items-center gap-1"
         >
-          <span className="font-bold">&lt;Melody</span>
+          <span className="font-bold">&lt; Melody</span>
           <span className="text-blush">.dev /&gt;</span>
         </Link>
 
@@ -169,32 +169,33 @@ export default function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="md:hidden bg-white dark:bg-charcoal px-4 pt-2 pb-4 shadow-sm"
+            className="md:hidden bg-white dark:bg-charcoal px-6 pt-4 pb-6 shadow-sm rounded-b-xl"
           >
-            <div className="flex flex-col space-y-2 font-inter text-charcoal dark:text-white">
+            <div className="flex flex-col space-y-4 font-inter text-base text-charcoal dark:text-white">
               {navLinks.map(({ path, label }) => (
                 <NavLink
                   key={path}
                   to={path}
+                  onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
-                    `font-medium ${
-                      isActive ? "text-blush underline" : "hover:text-blush"
+                    `relative transition-colors duration-300 ${
+                      isActive
+                        ? "text-accent"
+                        : "hover:text-accent hover:underline underline-offset-4"
                     }`
                   }
-                  onClick={() => setIsOpen(false)}
                 >
                   {label}
                 </NavLink>
               ))}
 
-              {/* Mobile Social Icons */}
-              <div className="flex gap-4 pt-4">
+              {/* Social Icons (optional) */}
+              <div className="flex space-x-6 pt-4">
                 <a
                   href="https://github.com/melodycartwright"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="GitHub"
-                  className="hover:text-blush transition"
+                  className="text-charcoal dark:text-white hover:text-accent transition-colors"
                 >
                   <FaGithub size={20} />
                 </a>
@@ -202,8 +203,7 @@ export default function Navbar() {
                   href="https://www.linkedin.com/in/melody-cartwright-5ab18a1b6"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                  className="hover:text-blush transition"
+                  className="text-charcoal dark:text-white hover:text-accent transition-colors"
                 >
                   <FaLinkedin size={20} />
                 </a>

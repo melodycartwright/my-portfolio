@@ -9,7 +9,7 @@ export default function Projects() {
     if (typeof window !== "undefined") {
       return localStorage.getItem("projectLayout") === "stacked";
     }
-    return false;
+    return false; // fallback during SSR or first render
   });
   
 
