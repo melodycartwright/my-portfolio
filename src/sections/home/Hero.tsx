@@ -1,46 +1,53 @@
-// src/sections/home/Hero.tsx
-
 import { motion } from "framer-motion";
+import profileImg from "../../assets/profile.png";
 import { Link } from "react-router-dom";
-import profileImg from "../../assets/melody.png";
 
 export default function Hero() {
   return (
-    <section className="w-full min-h-screen flex items-center justify-center bg-softWhite dark:bg-charcoal px-4 sm:px-8 relative overflow-hidden">
-      <div className="max-w-7xl w-full flex flex-col-reverse lg:flex-row items-center justify-between gap-12 py-20">
-        {/* Text Content */}
-        <div className="flex-1 text-center lg:text-left space-y-6">
-          <h1 className="text-4xl sm:text-5xl font-playfair text-charcoal dark:text-white font-bold">
-            Melody Cartwright
-          </h1>
-          <h2 className="text-xl sm:text-2xl font-inter text-muted">
-            Web Developer
-          </h2>
-          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-            <Link
-              to="https://github.com/melodycartwright"
-              className="px-5 py-2 rounded bg-blush text-white font-medium hover:bg-blush/80 transition"
-            >
-              GitHub
-            </Link>
-            <Link
-              to="/contact"
-              className="px-5 py-2 rounded border-2 border-blush text-blush font-medium hover:bg-blush hover:text-white transition"
-            >
-              Contact
-            </Link>
-          </div>
+    <section className="relative w-full h-screen overflow-hidden flex items-center">
+  
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.2 }}
+        className="w-full md:w-1/2 h-full bg-softwhite flex flex-col justify-center px-6 md:px-16 z-10 clip-left-diagonal text-charcoal"
+      >
+        <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">
+          Melody Cartwright
+        </h1>
+        <h2 className="text-xl md:text-2xl font-sans mb-6">
+          Frontend Developer & React Enthusiast
+        </h2>
+        <div className="flex gap-4">
+          <Link to="/projects">
+            <button className="px-5 py-2 rounded-2xl border border-charcoal bg-softwhite hover:bg-charcoal hover:text-softwhite transition-all">
+              View Projects
+            </button>
+          </Link>
+          <Link to="/about">
+            <button className="px-5 py-2 rounded-2xl border border-charcoal bg-softwhite hover:bg-charcoal hover:text-softwhite transition-all">
+              About Me
+            </button>
+          </Link>
         </div>
+      </motion.div>
 
-        {/* Profile Image */}
-        <div className="flex-1 flex justify-center relative">
-          <img
-            src={profileImg}
-            alt="Melody Cartwright"
-            className="w-64 h-64 rounded-full object-cover shadow-lg border-4 border-blush"
-          />
-        </div>
-      </div>
+      <motion.div
+        initial={{
+          clipPath: "polygon(100% 100%, 100% 0%, 100% 0%, 100% 100%)",
+        }}
+        animate={{
+          clipPath: "polygon(0 100%, 45% 0, 100% 0, 100% 100%)",
+        }}
+        transition={{ duration: 1.2, ease: "easeInOut" }}
+        className="absolute top-0 right-0 w-full md:w-1/2 h-full bg-blush z-0 overflow-hidden"
+      >
+        <img
+          src={profileImg}
+          alt="Melody Cartwright"
+          className="w-full h-full object-cover mix-blend-multiply"
+        />
+      </motion.div>
     </section>
   );
 }
