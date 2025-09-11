@@ -26,8 +26,8 @@ export default function AboutHero() {
       >
         <h1 className="text-4xl md:text-6xl font-serif mb-4">About Me</h1>
         <p className="text-lg md:text-xl max-w-2xl font-light">
-          A self-taught frontend developer, building beautiful user-centered web
-          experiences with resilience and heart.
+          Turning challenges into code: a frontend developer dedicated to
+          building meaningful digital experiences that uplift and inspire
         </p>
       </motion.div>
     </section>

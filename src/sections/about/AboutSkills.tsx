@@ -1,35 +1,51 @@
 const categories = [
   {
-    title: "Languages (Coding)",
-    items: ["HTML5", "CSS3", "JavaScript", "TypeScript"],
+    title: "Core Languages",
+    items: ["HTML5", "CSS3", "JavaScript (ES6+)", "TypeScript"],
   },
   {
     title: "Frameworks & Libraries",
-    items: ["React", "Node.js", "Express", "Tailwind CSS", "Framer Motion"],
+    items: [
+      "React",
+      "React Native (Expo)",
+      "Node.js",
+      "Express",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Storybook",
+    ],
   },
   {
-    title: "Tools",
-    items: ["Git & GitHub", "VS Code", "Postman", "Figma", "MongoDB"],
+    title: "Full-Stack Development",
+    items: [
+      "MERN Stack (MongoDB, Express, React, Node.js)",
+      "Backend & Frontend linking",
+      "Multi-repository project setups",
+      "API integration & testing",
+    ],
+  },
+  {
+    title: "Databases & APIs",
+    items: ["MongoDB", "REST APIs", "Postman (API testing & debugging)"],
+  },
+  {
+    title: "Tools & Workflows",
+    items: [
+      "Git & GitHub (branching, clean commits, PR reviews)",
+      "VS Code",
+      "Agile / Scrum collaboration",
+      "Figma (UI design & prototyping)",
+      "Monorepo & npm linking (npm workspaces, local packages)",
+    ],
   },
   {
     title: "Languages (Spoken)",
-    items: ["English (native)", "Swedish (professional working)"],
+    items: ["English (native)", "Swedish (professional working proficiency)"],
   },
-  {
-    title: "Fun Facts & Hobbies",
-    items: [
-      "I walk 15–20k steps every day",
-      "I love frontend + cybersecurity",
-      "I’m a mom of 2 neurodivergent kids",
-      "I rockclimb and Boulder on my freetime",
-      "I love animals and have a special bond with them",
-      "I love nature",
-      "I am a hobby collector",
-    ],
-  },
+
 ];
 
-export default function AboutSkillsInner() {
+export default function AboutSkills() {
   return (
     <div className="text-left space-y-8">
       <h2 className="text-3xl font-serif mb-4 text-center">Skills & Tools</h2>

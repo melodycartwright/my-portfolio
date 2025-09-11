@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import AboutStoryInner from "./AboutStoryInner";
-import AboutSkillsInner from "./AboutSkillsInner";
+import AboutStory from "./AboutStory";
+import AboutSkills from "./AboutSkills";
 
 export default function AboutContent() {
   return (
@@ -14,7 +14,7 @@ export default function AboutContent() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
         >
-          <AboutStoryInner />
+          <AboutStory />
         </motion.div>
 
         {/* About Skills: 1/4 */}
@@ -33,7 +33,7 @@ export default function AboutContent() {
               minHeight: "100%",
             }}
           >
-            <AboutSkillsInner />
+            <AboutSkills />
           </div>
         </motion.div>
       </div>
