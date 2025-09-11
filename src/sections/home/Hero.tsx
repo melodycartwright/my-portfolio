@@ -1,16 +1,46 @@
 import { motion } from "framer-motion";
 import profileImg from "../../assets/profile.png";
 import { Link } from "react-router-dom";
+import DiagonalPanel from "../../components/DiagonalPanel";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-screen overflow-hidden flex items-center">
-  
+    <section className="relative w-full h-[90vh] overflow-hidden flex items-center bg-blush bg-opacity-10 dark:bg-charcoal/80">
+      {/* Dark mode overlay for softer effect */}
+      <div className="hidden dark:block absolute inset-0 dark:bg-[#2f2f2f] bg-opacity-10 pointer-events-none z-0" />
+      {/* Diagonal Panel Animation */}
       <motion.div
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1.2 }}
-        className="w-full md:w-1/2 h-full bg-softwhite flex flex-col justify-center px-6 md:px-16 z-10 clip-left-diagonal text-charcoal"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2 }}
+      >
+        <DiagonalPanel />
+      </motion.div>
+
+      {/* IMAGE SIDE (fills right/larger space) */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2, delay: 1.2 }}
+        className="absolute top-0 right-0 w-full md:w-2/5 h-full z-20 flex items-center justify-center overflow-hidden"
+      >
+        <motion.img
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, delay: 1.6 }}
+          src={profileImg}
+          alt="Melody Cartwright"
+          className="w-3/4 h-3/4 object-cover rounded-full shadow-lg mt-[27%]"
+        />
+      </motion.div>
+
+      {/* TEXT SIDE (fade in after panel) */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2, delay: 2 }}
+        className="w-full md:w-1/2 h-full bg-transparent flex flex-col justify-center px-6 md:px-16 z-20 text-charcoal text-left"
+        style={{ position: "relative" }}
       >
         <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">
           Melody Cartwright
@@ -30,23 +60,6 @@ export default function Hero() {
             </button>
           </Link>
         </div>
-      </motion.div>
-
-      <motion.div
-        initial={{
-          clipPath: "polygon(100% 100%, 100% 0%, 100% 0%, 100% 100%)",
-        }}
-        animate={{
-          clipPath: "polygon(0 100%, 45% 0, 100% 0, 100% 100%)",
-        }}
-        transition={{ duration: 1.2, ease: "easeInOut" }}
-        className="absolute top-0 right-0 w-full md:w-1/2 h-full bg-blush z-0 overflow-hidden"
-      >
-        <img
-          src={profileImg}
-          alt="Melody Cartwright"
-          className="w-full h-full object-cover mix-blend-multiply"
-        />
       </motion.div>
     </section>
   );
