@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import Button from "./Button";
 
 type FormData = {
   name: string;
@@ -8,9 +9,8 @@ type FormData = {
 type Props = {
   compact?: boolean;
 };
-  
 
-export default function ContactForm( { compact = false}: Props) {
+export default function ContactForm({ compact = false }: Props) {
   const {
     register,
     handleSubmit,
@@ -72,12 +72,9 @@ export default function ContactForm( { compact = false}: Props) {
         )}
       </div>
 
-      <button
-        type="submit"
-        className="bg-sage dark:bg-sage text-white px-6 py-2 rounded font-medium hover:opacity-90 transition"
-      >
+      <Button type="submit" variant="sage">
         Send Message
-      </button>
+      </Button>
 
       {isSubmitSuccessful && (
         <p className="text-green-600 font-medium">Message sent successfully!</p>

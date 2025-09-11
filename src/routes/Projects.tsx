@@ -2,6 +2,7 @@ import { useState } from "react";
 import { projects } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 import { motion, AnimatePresence } from "framer-motion";
+import Button from "../components/Button";
 import { LayoutGrid, AlignJustify } from "lucide-react";
 
 export default function Projects() {
@@ -11,13 +12,12 @@ export default function Projects() {
     }
     return false; // fallback during SSR or first render
   });
-  
 
   const handleToggleLayout = () => {
     const newLayout = !isStacked;
     setIsStacked(newLayout);
     localStorage.setItem("projectLayout", newLayout ? "stacked" : "grid");
-    window.scrollTo({top:0, behavior:"smooth"});
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -39,13 +39,13 @@ export default function Projects() {
         </motion.h2>
 
         <div className="flex justify-center">
-          <button
+          <Button
             onClick={handleToggleLayout}
-            className="flex items-center gap-2 px-5 py-2 rounded-full border font-medium bg-white dark:bg-[#1f1f1f] border-gray-300 dark:border-gray-600 text-charcoal dark:text-softwhite hover:bg-sage dark:hover:bg-sage transition-all duration-300"
+            className="flex items-center gap-2 px-5 py-2 rounded-full font-medium bg-white dark:bg-[#1f1f1f] border-gray-300 dark:border-gray-600 text-charcoal dark:text-softwhite hover:bg-sage dark:hover:bg-sage transition-all duration-300"
           >
             {isStacked ? <LayoutGrid size={18} /> : <AlignJustify size={18} />}
             {isStacked ? "Grid View" : "Stacked View"}
-          </button>
+          </Button>
         </div>
 
         <AnimatePresence mode="wait">

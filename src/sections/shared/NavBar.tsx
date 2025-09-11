@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import Button from "../../components/Button";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -95,9 +96,9 @@ export default function Navbar() {
         {/* Right-side: Theme toggle + Mobile menu */}
         <div className="flex items-center space-x-4">
           {/* Dark mode toggle */}
-          <button
+          <Button
             onClick={toggleTheme}
-            className="text-charcoal dark:text-white"
+            variant="icon"
             aria-label="Toggle dark mode"
           >
             {isDark ? (
@@ -129,12 +130,13 @@ export default function Navbar() {
                 />
               </svg>
             )}
-          </button>
+          </Button>
 
           {/* Mobile menu toggle */}
-          <button
+          <Button
             onClick={() => setIsOpen((prev) => !prev)}
-            className="md:hidden text-charcoal dark:text-white"
+            variant="icon"
+            className="md:hidden"
             aria-label="Toggle menu"
           >
             <svg
@@ -158,7 +160,7 @@ export default function Navbar() {
                 />
               )}
             </svg>
-          </button>
+          </Button>
         </div>
       </motion.nav>
 

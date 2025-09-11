@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import profileImg from "../../assets/profile.png";
 import { Link } from "react-router-dom";
+import Button from "../../components/Button";
 import DiagonalPanel from "../../components/DiagonalPanel";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[90vh] overflow-hidden flex items-center bg-blush bg-opacity-10 dark:bg-charcoal/80">
+    <section className="relative w-full h-[90vh] overflow-hidden flex items-center bg-blush bg-opacity-10 dark:slate/80">
       {/* Dark mode overlay for softer effect */}
       <div className="hidden dark:block absolute inset-0 dark:bg-[#2f2f2f] bg-opacity-10 pointer-events-none z-0" />
       {/* Diagonal Panel Animation */}
@@ -42,22 +43,29 @@ export default function Hero() {
         className="w-full md:w-1/2 h-full bg-transparent flex flex-col justify-center px-6 md:px-16 z-20 text-charcoal text-left"
         style={{ position: "relative" }}
       >
-        <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">
+        <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-slate">
           Melody Cartwright
         </h1>
-        <h2 className="text-xl md:text-2xl font-sans mb-6">
+        <h2 className="text-xl md:text-2xl font-sans mb-6 text-slate">
           Frontend Developer & React Enthusiast
         </h2>
         <div className="flex gap-4">
           <Link to="/projects">
-            <button className="px-5 py-2 rounded-2xl border border-charcoal bg-softwhite hover:bg-charcoal hover:text-softwhite transition-all">
+            <Button
+              variant="primary"
+              className="dark:bg-slate hover:dark:bg-blush hover:dark:text-black dark:text-white"
+            >
               View Projects
-            </button>
+            </Button>
+
           </Link>
           <Link to="/about">
-            <button className="px-5 py-2 rounded-2xl border border-charcoal bg-softwhite hover:bg-charcoal hover:text-softwhite transition-all">
+           <Button
+              variant="primary"
+              className="dark:bg-slate hover:dark:bg-blush hover:dark:text-black dark:text-white"
+            >
               About Me
-            </button>
+            </Button>
           </Link>
         </div>
       </motion.div>
