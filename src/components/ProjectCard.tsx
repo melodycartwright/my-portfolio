@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import type { Project } from "../types/Project";
 import "./ProjectCard.css";
 
-interface ProjectCardProps extends Project {
+interface ProjectCardProps extends Omit<Project, "url"> {
+  /** Optional external live URL for the project */
+  url?: string;
   variant?: "preview" | "full";
   index?: number;
 }
@@ -13,13 +15,14 @@ export default function ProjectCard({
   title,
   description,
   image,
-  url,
+  url, // <-- keep and use
   tech,
   variant = "preview",
   index = 0,
 }: ProjectCardProps) {
   const isPreview = variant === "preview";
   const isEven = index % 2 === 0;
+  const hasUrl = Boolean(url); // marks url as read + used for UI
 
   const layoutClass =
     !isPreview && isEven
@@ -52,9 +55,9 @@ export default function ProjectCard({
 
               {tech && (
                 <ul className="flex flex-wrap gap-2 pt-1">
-                  {tech.map((item, index) => (
+                  {tech.map((item, i) => (
                     <li
-                      key={index}
+                      key={i}
                       className="text-xs px-2 py-1 bg-softwhite dark:bg-[#2f2f2f] dark:text-softwhite border border-gray-300 rounded-full text-gray-600"
                     >
                       {item}
@@ -67,6 +70,11 @@ export default function ProjectCard({
             <span className="relative inline-block text-sm font-medium text-slate-700 mt-4 group">
               View Project →
               <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-sage transition-all duration-300 group-hover:w-full"></span>
+              {hasUrl && (
+                <span className="ml-2 text-xs text-gray-500">
+                  (• Live available)
+                </span>
+              )}
             </span>
           </div>
         </Link>
@@ -91,9 +99,9 @@ export default function ProjectCard({
 
               {tech && (
                 <ul className="flex flex-wrap gap-2 pt-1">
-                  {tech.map((item, index) => (
+                  {tech.map((item, i) => (
                     <li
-                      key={index}
+                      key={i}
                       className="text-xs px-2 py-1 bg-softwhite dark:bg-charcoal dark:text-softwhite border border-gray-300 rounded-full text-gray-600"
                     >
                       {item}
@@ -102,6 +110,19 @@ export default function ProjectCard({
                 </ul>
               )}
             </div>
+
+            {hasUrl && (
+              <div className="pt-2">
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block text-sm font-medium px-3 py-2 border border-gray-300 rounded-md hover:bg-gray-50 dark:hover:bg-[#3a3a3a]"
+                >
+                  Live site ↗
+                </a>
+              </div>
+            )}
           </div>
         </>
       )}
