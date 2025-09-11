@@ -23,39 +23,35 @@ export default function AboutStory() {
           />
 
           <p className="mb-4">
-            I’m a frontend developer with a story rooted in resilience,
+            I’m a frontend developer with a journey shaped by resilience,
             creativity, and transformation.
           </p>
           <p className="mb-4">
             Originally from California, I moved to Sweden to support my
-            grandmother and build a life closer to my Swedish roots. Over time,
-            I created my own family here, but the journey hasn’t been easy. In
-            just a few short years, I experienced immense personal loss, a major
-            separation, and the intense responsibility of raising two incredible
-            children with special needs — all while feeling the pressure of not
-            having financial freedom or a career I could truly grow in.
+            grandmother and start a new chapter in life. Along the way, I built
+            a family here and navigated challenges that tested me deeply — from
+            personal loss to major life changes, and the responsibility of
+            raising two amazing children with special needs.
           </p>
           <p className="mb-4">
-            That became the turning point. I decided to pivot toward a path that
-            would not only support my family, but allow me to thrive creatively
-            and intellectually. I discovered coding — and immediately threw
-            myself into learning everything I could. Frontend development became
-            more than just a skill; it became my outlet, my drive, and my focus
-            during some of the most turbulent times of my life.
+            Through it all, I found my turning point in technology. Coding
+            became more than a career path — it became my outlet, my way to
+            create, and my anchor during some of the most turbulent times of my
+            life. It allowed me to channel my strong point of problem-solving,
+            giving me the perfect balance of logic and creativity.
           </p>
           <p className="mb-4">
-            What keeps me going is not just the desire to succeed, but the love
-            I have for building beautiful, functional experiences that people
-            actually enjoy using. I’m passionate about user interfaces that feel
-            good, look good, and serve a real purpose. Whether it’s a mental
-            health platform, a journaling tool, or helping someone bring their
-            business vision to life — I want to be part of creating things that
-            uplift others.
+            What drives me today is building digital experiences that feel
+            meaningful — interfaces that look good, work seamlessly, and
+            actually make life better for the people using them. Whether it’s a
+            journaling tool, a mental health platform, or helping a business
+            bring its vision online, I’m passionate about creating projects that
+            uplift and empower.
           </p>
           <p className="font-semibold italic text-center mt-8">
-            If there’s one thing I’ve learned, it’s this: no matter how chaotic
-            life becomes, nothing can stop me. I’ve kept going, I’ve built
-            through the hardest moments, and I’m just getting started.
+            If there’s one thing my journey has proven, it’s this: no matter how
+            chaotic life gets, I don’t stop. I build, I learn, I adapt — and I’m
+            just getting started.
           </p>
         </div>
       </motion.div>
