@@ -1,5 +1,5 @@
-import {ZodSchema} from 'zod';
-import {Request, Response, NextFunction} from 'express';
+import type { ZodSchema } from 'zod';
+import type { Request, Response, NextFunction } from 'express';
 import { error } from 'console';
 
 export function validate <T>(schema: ZodSchema<T>) {
