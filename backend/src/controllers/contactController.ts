@@ -6,16 +6,15 @@ export const sendContactEmail = async (
   res: Response,
   next: NextFunction
 ) => {
+  console.log("Contact API hit", req.body);
   const EMAIL_USER = process.env.EMAIL_USER;
   const EMAIL_PASS = process.env.EMAIL_PASS;
   const EMAIL_TO = process.env.EMAIL_TO || EMAIL_USER;
 
   if (!EMAIL_USER || !EMAIL_PASS) {
-    return res
-      .status(500)
-      .json({
-        message: "Email credentials are not set in environment variables.",
-      });
+    return res.status(500).json({
+      message: "Email credentials are not set in environment variables.",
+    });
   }
 
   const transporter = nodemailer.createTransport({
@@ -36,8 +35,10 @@ export const sendContactEmail = async (
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     };
     await transporter.sendMail(mailOptions);
+    console.log("Mail sent!");
     res.status(200).json({ message: "Message sent successfully." });
   } catch (error) {
+    console.error("Mail send error:", error);
     next(error);
   }
 };
