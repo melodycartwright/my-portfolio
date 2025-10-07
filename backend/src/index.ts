@@ -6,8 +6,8 @@ import express from "express";
 import helmet from "helmet";
 import cors from "cors";
 import rateLimit from "express-rate-limit";
-import mongoSanitize from "express-mongo-sanitize";
-import xss from "xss-clean";
+// import mongoSanitize from "express-mongo-sanitize";
+// import xss from "xss-clean";
 //import mongoose from "mongoose";
 import contactRouter from "./routes/contact.js";
 import { validateContact } from "./middleware/validateContact.js";
@@ -18,8 +18,8 @@ app.use(helmet());
 app.use(cors({ origin: process.env.FRONTEND_URL || "http://localhost:5173" }));
 app.use(express.json({ limit: "10kb" }));
 app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));
-app.use(mongoSanitize());
-app.use(xss());
+// app.use(mongoSanitize());
+// app.use(xss());
 
 //mongoose
 //   .connect(process.env.MONGO_URI || "", { dbName: "portfolio" })
