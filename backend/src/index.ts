@@ -6,6 +6,8 @@ import rateLimit from "express-rate-limit";
 import mongoSanitize from "express-mongo-sanitize";
 import xss from "xss-clean";
 import mongoose from "mongoose";
+import contactRouter from "./routes/contact.js";
+import { validateContact } from "./middleware/validateContact.js";
 
 dotenv.config();
 
@@ -22,6 +24,9 @@ mongoose
   .connect(process.env.MONGO_URI || "", { dbName: "portfolio" })
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
+
+// Contact form route
+app.use("/api/contact", validateContact, contactRouter);
 
 // TODO: Add routes here
 
