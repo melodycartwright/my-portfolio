@@ -18,14 +18,14 @@ export default function ContactForm({ compact = false }: Props) {
     reset,
   } = useForm<FormData>();
 
-const onSubmit = async (data: FormData) => {
-  await fetch("http://localhost:4000/api/contact", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  });
-  reset();
-};
+  const onSubmit = async (data: FormData) => {
+    await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    reset();
+  };
 
   return (
     <form
