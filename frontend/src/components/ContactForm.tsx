@@ -18,11 +18,27 @@ export default function ContactForm({ compact = false }: Props) {
     reset,
   } = useForm<FormData>();
 
-  const onSubmit = (data: FormData) => {
-    console.log("📨 Form submitted:", data);
-    reset();
+  const onSubmit = async (data: FormData) => {
+    try {
+      const res = await fetch("http://localhost:4000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(
+          errorData?.errors
+            ? Object.values(errorData.errors).flat().join(" ")
+            : errorData.message || "Something went wrong."
+        );
+      }
+      reset();
+      alert("Message sent successfully!");
+    } catch (err: any) {
+      alert(err.message || "Failed to send message.");
+    }
   };
-
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
