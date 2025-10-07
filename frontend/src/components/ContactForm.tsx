@@ -10,27 +10,46 @@ type Props = {
   compact?: boolean;
 };
 
+import { useState } from "react";
+
 export default function ContactForm({ compact = false }: Props) {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitSuccessful },
+    formState: { errors },
     reset,
   } = useForm<FormData>();
+  const [status, setStatus] = useState<
+    "idle" | "success" | "error" | "loading"
+  >("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
   const onSubmit = async (data: FormData) => {
-    await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-    reset();
+    setStatus("loading");
+    setErrorMsg("");
+    try {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        setStatus("success");
+        reset();
+      } else {
+        setStatus("error");
+        setErrorMsg("Failed to send message. Please try again.");
+      }
+    } catch (err) {
+      setStatus("error");
+      setErrorMsg("Network error. Please try again.");
+    }
   };
 
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className={`${
+      className={`$${
         compact ? "space-y-4 p-4 text-sm" : "space-y-6 p-6"
       } bg-white dark:bg-[#2f2f2f] rounded-xl shadow-md`}
     >
@@ -76,12 +95,15 @@ export default function ContactForm({ compact = false }: Props) {
         )}
       </div>
 
-      <Button type="submit" variant="sage">
-        Send Message
+      <Button type="submit" variant="sage" disabled={status === "loading"}>
+        {status === "loading" ? "Sending..." : "Send Message"}
       </Button>
 
-      {isSubmitSuccessful && (
+      {status === "success" && (
         <p className="text-green-600 font-medium">Message sent successfully!</p>
+      )}
+      {status === "error" && (
+        <p className="text-red-600 font-medium">{errorMsg}</p>
       )}
     </form>
   );
