@@ -1,16 +1,17 @@
 import type { Project } from "../types/Project";
 import placeholder from "../assets/placeholder-project.jpg";
+import chatify from "../assets/chatify.png"
 
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Portfolio Website",
+    title: "Chatify Client",
     description:
-      "My personal portfolio built with React, TypeScript, and Tailwind.",
-    image: placeholder,
+      "Chatify Client is a modern React chat application that features real-time messaging, secure authentication, user profile management, and dynamic conversation handling. Built with best practices in mind, it uses React Context for state management, Axios for API integration, and DOMPurify for security. The project demonstrates advanced frontend skills, including modular architecture, responsive UI, error handling with Sentry, and clean code organization—making it an ideal showcase of professional web development expertise.",
+    image: chatify,
 
-    url: "#",
-    tech: ["React", "TypeScript", "Tailwind"],
+    url: "https://chatifyclient.netlify.app/login",
+    tech: ["React", "Axios", "Vite", "DOMPurify", "Sentry", "CSS modules", "JavaScript (ES6+)", "React Context"],
   },
   {
     id: 2,

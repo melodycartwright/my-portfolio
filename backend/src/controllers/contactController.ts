@@ -25,7 +25,6 @@ export const sendContactEmail = async (
       from: RESEND_FROM_EMAIL,
       to: RESEND_TO_EMAIL,
       subject: `New Contact Form Submission from ${name}`,
-      reply_to: email,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     };
     await resend.emails.send(mailData);
