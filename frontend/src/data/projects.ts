@@ -1,7 +1,7 @@
 import type { Project } from "../types/Project";
 import placeholder from "../assets/placeholder-project.jpg";
 import chatify from "../assets/chatify.png"
-import weather from "../assets/weather.png"
+import weather from "../assets/ReactWeatherApp.png"
 
 export const projects: Project[] = [
   {
