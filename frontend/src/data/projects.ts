@@ -26,7 +26,7 @@ export const projects: Project[] = [
 {
   id: 2,
   title: "Weather App with Location-Based Time Detection",
-  description: "A modern, responsive React weather application that dynamically displays beautiful background images based on both the searched location's actual weather conditions and local time zone. Features sophisticated glass morphism design with split-panel layout, real-time weather data, location-aware day/night detection, favorites system with localStorage persistence, 5-day forecast, and integrated dark mode toggle.",
+  description: "Built a modern, responsive React weather application that dynamically displays beautiful background images based on both the searched location's actual weather conditions and local time zone. The app features a sophisticated glass morphism design with a split-panel layout, integrating real-time weather data from the OpenWeatherMap API. Key technical achievements include implementing location-aware day/night detection using timezone calculations, creating a favorites system with localStorage persistence, and developing a fully responsive design that works seamlessly across all devices. The application includes a 5-day forecast, detailed weather metrics, and an integrated dark mode toggle. Deployed on Netlify with optimized build processes and SPA routing configuration.",
   image: weather,
   url: "https://weatherbymel.netlify.app/",
   tech: ["React 18", "Vite", "OpenWeatherMap API", "CSS3 Glass Morphism", "Responsive Design", "Timezone Calculations", "Local Storage"]
