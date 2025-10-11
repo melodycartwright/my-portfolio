@@ -23,15 +23,14 @@ export const projects: Project[] = [
       "React Context",
     ],
   },
-  {
-    id: 2,
-    title: "Weather App",
-    description: "A weather forecasting app using OpenWeather API.",
-    image: weather,
-
-    url: "https://weatherbymel.netlify.app/",
-    tech: ["React", "API", "CSS"],
-  },
+{
+  id: 2,
+  title: "Weather App with Location-Based Time Detection",
+  description: "A modern, responsive React weather application that dynamically displays beautiful background images based on both the searched location's actual weather conditions and local time zone. Features sophisticated glass morphism design with split-panel layout, real-time weather data, location-aware day/night detection, favorites system with localStorage persistence, 5-day forecast, and integrated dark mode toggle.",
+  image: weather,
+  url: "https://weatherbymel.netlify.app/",
+  tech: ["React 18", "Vite", "OpenWeatherMap API", "CSS3 Glass Morphism", "Responsive Design", "Timezone Calculations", "Local Storage"]
+},
   {
     id: 3,
     title: "E-commerce Webshop",
