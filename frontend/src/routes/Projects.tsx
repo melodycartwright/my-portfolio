@@ -57,7 +57,7 @@ export default function Projects() {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className={`${
               isStacked
-                ? "space-y-20"
+                ? "space-y-8"
                 : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
             }`}
           >
@@ -68,7 +68,12 @@ export default function Projects() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
               >
-                <ProjectCard {...project} variant="full" index={index} />
+                <ProjectCard
+                  {...project}
+                  variant="preview"
+                  index={index}
+                  isStacked={isStacked}
+                />
               </motion.div>
             ))}
           </motion.div>

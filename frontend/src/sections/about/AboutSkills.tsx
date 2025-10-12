@@ -40,7 +40,7 @@ const categories = [
   },
   {
     title: "Languages (Spoken)",
-    items: ["English (native)", "Swedish (professional working proficiency)"],
+    items: ["English (native)", "Swedish (conversational proficiency)"],
   },
 
 ];
