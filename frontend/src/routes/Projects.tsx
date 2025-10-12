@@ -22,7 +22,7 @@ export default function Projects() {
 
   return (
     <motion.section
-      className="bg-softwhite dark:bg-charcoal text-charcoal dark:text-white min-h-screen px-4 py-20"
+      className="bg-softwhite dark:bg-charcoal text-charcoal dark:text-white px-4 py-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false, amount: 0.2 }}
@@ -51,23 +51,25 @@ export default function Projects() {
         <AnimatePresence mode="wait">
           <motion.div
             key={isStacked ? "stacked" : "grid"}
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -40 }}
-            transition={{ duration: 0.4 }}
-            className={`min-h-[400px] ${
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className={`${
               isStacked
                 ? "space-y-20"
                 : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
             }`}
           >
             {projects.map((project, index) => (
-              <ProjectCard
-                key={project.id}
-                {...project}
-                variant="full"
-                index={index}
-              />
+              <motion.div
+                key={`${isStacked ? "stacked" : "grid"}-${project.id}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+              >
+                <ProjectCard {...project} variant="full" index={index} />
+              </motion.div>
             ))}
           </motion.div>
         </AnimatePresence>

@@ -10,6 +10,15 @@ interface ProjectCardProps extends Omit<Project, "url"> {
   index?: number;
 }
 
+// Helper function to truncate description to a specific word count
+const truncateDescription = (text: string, wordLimit: number = 20): string => {
+  const words = text.split(" ");
+  if (words.length <= wordLimit) {
+    return text;
+  }
+  return words.slice(0, wordLimit).join(" ") + "...";
+};
+
 export default function ProjectCard({
   id,
   title,
@@ -49,8 +58,8 @@ export default function ProjectCard({
                 <span className="block h-[2px] w-0 bg-sage group-hover:w-full transition-all duration-300"></span>
               </h3>
 
-              <p className="text-sm text-gray-700 dark:text-white font-sans">
-                {description}
+              <p className="text-sm text-gray-700 dark:text-white font-sans line-clamp-4">
+                {truncateDescription(description, 20)}
               </p>
 
               {tech && (
@@ -67,15 +76,19 @@ export default function ProjectCard({
               )}
             </div>
 
-            <span className="relative inline-block text-sm font-medium text-slate-700 mt-4 group">
-              View Project →
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-sage transition-all duration-300 group-hover:w-full"></span>
-              {hasUrl && (
-                <span className="ml-2 text-xs text-gray-500">
-                  (• Live available)
-                </span>
-              )}
-            </span>
+            {hasUrl && (
+              <div className="flex justify-end mt-4">
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-sage border border-sage rounded-full hover:bg-sage hover:text-white transition-all duration-300"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  Live Site ↗
+                </a>
+              </div>
+            )}
           </div>
         </Link>
       ) : (
@@ -93,8 +106,8 @@ export default function ProjectCard({
                 <span className="block h-[2px] w-0 bg-sage group-hover:w-full transition-all duration-300"></span>
               </Link>
 
-              <p className="text-sm text-gray-700 dark:text-softwhite font-sans">
-                {description}
+              <p className="text-sm text-gray-700 dark:text-softwhite font-sans line-clamp-6 leading-relaxed">
+                {truncateDescription(description, 20)}
               </p>
 
               {tech && (
@@ -112,14 +125,14 @@ export default function ProjectCard({
             </div>
 
             {hasUrl && (
-              <div className="pt-2">
+              <div className="flex justify-end pt-2">
                 <a
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block text-sm font-medium px-3 py-2 border border-gray-300 rounded-md hover:bg-gray-50 dark:hover:bg-[#3a3a3a]"
+                  className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-sage border border-sage rounded-full hover:bg-sage hover:text-white transition-all duration-300"
                 >
-                  Live site ↗
+                  Live Site ↗
                 </a>
               </div>
             )}

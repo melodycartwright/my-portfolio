@@ -9,7 +9,7 @@ import gitLogo from "../../assets/logo/gitLogo.png";
 export default function Experience() {
   return (
     <motion.section
-    className="bg-white dark:bg-charcoal text-charcoal dark:text-white py-16 px-4"
+      className="bg-white dark:bg-charcoal text-charcoal dark:text-white py-16 px-4"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false, amount: 0.2 }} // animate again if re-entered
@@ -22,7 +22,7 @@ export default function Experience() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <motion.h2 className="text-3xl md:text-4xl font-serif font-bold">
+          <motion.h2 className="text-3xl md:text-4xl font-serif font-bold text-center md:text-left">
             Experience & Goals
           </motion.h2>
 
