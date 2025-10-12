@@ -13,7 +13,7 @@ const Footer = () => {
 
       <div className="flex justify-center gap-4 my-2">
         <a
-          href="https://github.com/your-username"
+          href="https://github.com/melodycartwright"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
@@ -21,7 +21,7 @@ const Footer = () => {
           <Github className="w-5 h-5 text-gray-600 dark:text-white hover:text-black dark:hover:text-sage transition" />
         </a>
         <a
-          href="https://linkedin.com/in/your-linkedin"
+          href="https://www.linkedin.com/in/melody-cartwright-5ab18a1b6"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
