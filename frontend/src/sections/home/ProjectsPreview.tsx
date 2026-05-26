@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import ProjectCard from "../../components/ProjectCard";
+import Button from "../../components/Button";
 import { projects } from "../../data/projects";
 import "../../components/ProjectCard.css";
 
@@ -36,12 +37,9 @@ export default function ProjectsPreview() {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
         >
-          <motion.div
-            whileHover={{ scale: 1.05, backgroundColor: "#eacfcf" }}
-            className="inline-block px-6 py-2 rounded-full font-medium bg-blush text-charcoal cursor-pointer transition-all duration-200"
-          >
-            <Link to="/projects">See More Projects</Link>
-          </motion.div>
+          <Link to="/projects">
+            <Button variant="primary">See More Projects</Button>
+          </Link>
         </motion.div>
       </div>
     </motion.section>

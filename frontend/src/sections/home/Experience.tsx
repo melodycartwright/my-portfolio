@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import Button from "../../components/Button";
 import reactLogo from "../../assets/logo/reactLogo.png";
 import tsLogo from "../../assets/logo/typescriptLogo.png";
 import tailwindLogo from "../../assets/logo/tailwindLogo.png";
@@ -34,10 +35,10 @@ export default function Experience() {
             value thoughtful interfaces, accessibility, and user trust.
           </motion.p>
 
-          <motion.blockquote className="italic text-gray-700 border-l-4 border-sage pl-4 font-serif hover:text-slate-700 hover:translate-x-1 transition-all duration-300">
+          <motion.blockquote className="italic text-slate/85 dark:text-gray-200 border-l-4 border-sage pl-4 font-serif hover:text-slate dark:hover:text-sage hover:translate-x-1 transition-all duration-300">
             “Design isn’t just what it looks like and feels like — design is how
             it works.”
-            <span className="block mt-2 text-sm text-gray-500">
+            <span className="block mt-2 text-sm text-gray-500 dark:text-gray-400">
               – Steve Jobs
             </span>
           </motion.blockquote>
@@ -48,12 +49,9 @@ export default function Experience() {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            <motion.div
-              whileHover={{ scale: 1.05, backgroundColor: "#eacfcf" }}
-              className="inline-block px-6 py-2 rounded-full font-medium bg-blush text-charcoal cursor-pointer transition-all duration-200"
-            >
-              <Link to="/about">Learn More About Me</Link>
-            </motion.div>
+            <Link to="/about">
+              <Button variant="primary">Learn More About Me</Button>
+            </Link>
           </motion.div>
         </motion.div>
 
@@ -73,7 +71,7 @@ export default function Experience() {
                 whileHover={{ scale: 1.2 }}
                 transition={{ type: "spring", stiffness: 300 }}
               />
-            )
+            ),
           )}
         </motion.div>
       </div>
