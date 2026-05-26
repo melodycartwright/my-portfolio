@@ -27,7 +27,7 @@ app.use(
     },
     methods: ["GET", "POST"],
     credentials: true,
-  })
+  }),
 );
 app.use(express.json({ limit: "10kb" }));
 app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));

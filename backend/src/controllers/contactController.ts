@@ -10,7 +10,7 @@ const resend = RESEND_API_KEY ? new Resend(RESEND_API_KEY) : null;
 export const sendContactEmail = async (
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
   console.log("Contact API hit", req.body);
 
