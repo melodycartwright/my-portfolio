@@ -8,9 +8,9 @@ export default function ProjectDetail() {
 
   if (!project) {
     return (
-      <div className="text-center py-20 text-charcoal">
+      <div className="text-center py-20 text-charcoal dark:text-softwhite bg-softwhite dark:bg-charcoal min-h-screen">
         <p>Project not found.</p>
-        <Link to="/projects" className="underline text-sage">
+        <Link to="/projects" className="underline text-accent dark:text-sage">
           ← Back to Projects
         </Link>
       </div>
@@ -19,7 +19,7 @@ export default function ProjectDetail() {
 
   return (
     <motion.section
-      className="bg-softwhite text-charcoal py-20 px-6 relative min-h-screen"
+      className="bg-softwhite dark:bg-charcoal text-charcoal dark:text-softwhite py-20 px-6 relative min-h-screen"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
@@ -40,7 +40,7 @@ export default function ProjectDetail() {
             {project.tech.map((item, index) => (
               <li
                 key={index}
-                className="text-xs px-2 py-1 bg-softwhite border border-gray-300 rounded-full text-gray-600"
+                className="text-xs px-2 py-1 bg-softwhite dark:bg-charcoal border border-gray-300 dark:border-gray-600 rounded-full text-gray-600 dark:text-gray-200"
               >
                 {item}
               </li>
@@ -54,7 +54,7 @@ export default function ProjectDetail() {
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2 text-sm font-medium text-sage border border-sage rounded-full hover:bg-sage hover:text-white transition-all duration-300"
+              className="inline-flex items-center px-4 py-2 text-sm font-medium text-sage border border-sage rounded-full hover:bg-sage hover:text-white dark:hover:text-charcoal transition-all duration-300"
             >
               Live Site ↗
             </a>
@@ -66,7 +66,7 @@ export default function ProjectDetail() {
       <div className="absolute bottom-6 left-6">
         <Link
           to="/projects"
-          className="text-sm text-sage hover:underline transition"
+          className="text-sm text-accent dark:text-sage hover:underline transition"
         >
           ← Back to Projects
         </Link>

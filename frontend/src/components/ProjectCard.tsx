@@ -39,8 +39,8 @@ export default function ProjectCard({
     !isPreview && isEven
       ? "md:flex md:flex-row"
       : !isPreview
-      ? "md:flex md:flex-row-reverse"
-      : "";
+        ? "md:flex md:flex-row-reverse"
+        : "";
 
   return (
     <motion.div
@@ -89,13 +89,13 @@ export default function ProjectCard({
                   {tech.slice(0, 4).map((item, i) => (
                     <span
                       key={i}
-                      className="text-xs px-2 py-1 bg-softwhite dark:bg-[#2f2f2f] dark:text-softwhite border border-gray-300 rounded-full text-gray-600 whitespace-nowrap"
+                      className="text-xs px-2 py-1 bg-softwhite dark:bg-[#2f2f2f] dark:text-softwhite border border-gray-300 dark:border-gray-600 rounded-full text-gray-600 dark:text-gray-200 whitespace-nowrap"
                     >
                       {item}
                     </span>
                   ))}
                   {tech.length > 4 && (
-                    <span className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-600 border border-gray-300 rounded-full text-gray-500">
+                    <span className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-full text-gray-600 dark:text-gray-200">
                       +{tech.length - 4}
                     </span>
                   )}
@@ -110,7 +110,7 @@ export default function ProjectCard({
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-sage border border-sage rounded-full hover:bg-sage hover:text-white transition-all duration-300"
+                  className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-sage border border-sage rounded-full hover:bg-sage hover:text-white dark:hover:text-charcoal transition-all duration-300"
                   onClick={(e) => e.stopPropagation()}
                 >
                   Live Site ↗
@@ -126,7 +126,7 @@ export default function ProjectCard({
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-sage border border-sage rounded-full hover:bg-sage hover:text-white transition-all duration-300 whitespace-nowrap"
+                className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-sage border border-sage rounded-full hover:bg-sage hover:text-white dark:hover:text-charcoal transition-all duration-300 whitespace-nowrap"
                 onClick={(e) => e.stopPropagation()}
               >
                 Live Site ↗
@@ -158,7 +158,7 @@ export default function ProjectCard({
                   {tech.map((item, i) => (
                     <li
                       key={i}
-                      className="text-xs px-2 py-1 bg-softwhite dark:bg-charcoal dark:text-softwhite border border-gray-300 rounded-full text-gray-600"
+                      className="text-xs px-2 py-1 bg-softwhite dark:bg-charcoal dark:text-softwhite border border-gray-300 dark:border-gray-600 rounded-full text-gray-600 dark:text-gray-200"
                     >
                       {item}
                     </li>
@@ -173,7 +173,7 @@ export default function ProjectCard({
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-sage border border-sage rounded-full hover:bg-sage hover:text-white transition-all duration-300"
+                  className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-sage border border-sage rounded-full hover:bg-sage hover:text-white dark:hover:text-charcoal transition-all duration-300"
                 >
                   Live Site ↗
                 </a>

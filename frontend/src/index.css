@@ -15,3 +15,21 @@ html {
 .clip-right-diagonal {
   clip-path: polygon(40% 0, 100% 0, 100% 100%, 0% 100%);
 }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #7a3e56;
+  outline-offset: 2px;
+  border-radius: 0.5rem;
+}
+
+.dark a:focus-visible,
+.dark button:focus-visible,
+.dark input:focus-visible,
+.dark textarea:focus-visible,
+.dark select:focus-visible {
+  outline-color: #9cb7ad;
+}
