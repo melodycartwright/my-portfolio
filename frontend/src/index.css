@@ -1,18 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap");
 
 @import "@fontsource/inter";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 .clip-left-diagonal {
-    clip-path: polygon(0 0, 100% 0, 60% 100%, 0% 100%);
- 
+  clip-path: polygon(0 0, 100% 0, 60% 100%, 0% 100%);
 }
 
 .clip-right-diagonal {
-    clip-path: polygon(40% 0, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(40% 0, 100% 0, 100% 100%, 0% 100%);
 }
