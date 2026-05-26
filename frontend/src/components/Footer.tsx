@@ -37,14 +37,6 @@ const Footer = () => {
         >
           CV (English)
         </a>
-        <span>|</span>
-        <a
-          href="/Melody-Cartwright-CV-Svenska.pdf"
-          download
-          className="hover:text-white dark:hover:text-white transition"
-        >
-          CV (Svenska)
-        </a>
       </div>
       <div className="mt-4">
         <Link

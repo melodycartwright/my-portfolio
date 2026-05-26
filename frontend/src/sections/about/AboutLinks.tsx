@@ -16,13 +16,7 @@ const links = [
   },
   {
     label: "Download CV (English)",
-    url: "/cv-english.pdf",
-    icon: <HiOutlineDocumentDownload />,
-    download: true,
-  },
-  {
-    label: "Download CV (Swedish)",
-    url: "/cv-swedish.pdf",
+    url: "/Melody-Cartwright-CV-English.pdf",
     icon: <HiOutlineDocumentDownload />,
     download: true,
   },
