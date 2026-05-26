@@ -6,7 +6,7 @@ import DiagonalPanel from "../../components/DiagonalPanel";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[100vh] md:h-[90vh] overflow-hidden flex flex-col md:flex-row items-center bg-blush bg-opacity-10 dark:bg-slate/80">
+    <section className="relative w-full h-[100vh] md:h-[90vh] overflow-hidden flex flex-col md:flex-row items-center bg-softwhite dark:bg-slate/80">
       {/* Dark mode overlay for softer effect */}
       <div className="hidden dark:block absolute inset-0 dark:bg-[#2f2f2f] bg-opacity-10 pointer-events-none z-0" />
 
@@ -52,15 +52,15 @@ export default function Hero() {
           <Link to="/projects">
             <Button
               variant="primary"
-              className="dark:bg-slate hover:dark:bg-blush hover:dark:text-black dark:text-white"
+              className="dark:bg-accent dark:hover:bg-accentHover dark:text-softwhite"
             >
               View Projects
             </Button>
           </Link>
           <Link to="/about">
             <Button
-              variant="primary"
-              className="dark:bg-slate hover:dark:bg-blush hover:dark:text-black dark:text-white"
+              variant="secondary"
+              className="dark:border-sage/50 dark:text-softwhite dark:hover:text-sage"
             >
               About Me
             </Button>
