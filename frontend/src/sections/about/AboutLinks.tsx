@@ -3,7 +3,6 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineDocumentDownload } from "react-icons/hi";
 
 const links = [
-    
   {
     label: "GitHub",
     url: "https://github.com/melodycartwright",

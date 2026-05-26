@@ -11,7 +11,7 @@ export default function AboutContent() {
           className="md:w-3/4"
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.8 }}
         >
           <AboutStory />
@@ -22,7 +22,7 @@ export default function AboutContent() {
           className="md:w-1/4"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.8, delay: 0.15 }}
         >
           <div
