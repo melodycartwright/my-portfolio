@@ -6,7 +6,7 @@ import DiagonalPanel from "../../components/DiagonalPanel";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[100vh] md:h-[90vh] overflow-hidden flex flex-col md:flex-row items-center bg-blush bg-opacity-10 dark:slate/80">
+    <section className="relative w-full h-[100vh] md:h-[90vh] overflow-hidden flex flex-col md:flex-row items-center bg-blush bg-opacity-10 dark:bg-slate/80">
       {/* Dark mode overlay for softer effect */}
       <div className="hidden dark:block absolute inset-0 dark:bg-[#2f2f2f] bg-opacity-10 pointer-events-none z-0" />
 
@@ -73,7 +73,7 @@ export default function Hero() {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 1 }}
-        className="w-full md:w-2/5 h-1/2 md:h-full z-20 flex items-center justify-center overflow-hidden order-1 md:order-2 md:absolute md:top-0 md:right-0"
+        className="w-full md:w-1/2 h-1/2 md:h-full z-20 flex items-center justify-center md:justify-end overflow-hidden order-1 md:order-2 md:pr-6 lg:pr-12"
       >
         <motion.img
           initial={{ opacity: 0, scale: 0.8 }}
@@ -81,7 +81,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 1.2 }}
           src={profileImg}
           alt="Melody Cartwright"
-          className="w-64 h-64 md:w-3/4 md:h-3/4 object-cover rounded-full shadow-lg mt-4 md:mt-[27%]"
+          className="w-64 h-64 md:w-[64%] md:h-[64%] object-cover rounded-full shadow-lg mt-4 md:mt-24"
         />
       </motion.div>
     </section>
