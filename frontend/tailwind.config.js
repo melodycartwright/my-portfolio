@@ -5,14 +5,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        softwhite: "#f7f7f7",
-        charcoal: "#1e1e1e",
-        blush: "#e1bebe",
-        sage: "#b4d3c8",
-        indigo: "#5e6472",
-        slate: "#3b3f58",
-        blushHover: "#e9cfcf",
-        sageHover: "#cde0d8",
+        softwhite: "#f6f3f1",
+        offwhite: "#f2eeeb",
+        surface: "#ffffff",
+        charcoal: "#1f1d21",
+        blush: "#d7b2b8",
+        sage: "#9cb7ad",
+        indigo: "#59607a",
+        slate: "#30364c",
+        accent: "#7a3e56",
+        accentHover: "#643347",
+        blushHover: "#dfc0c5",
+        sageHover: "#b9ccc4",
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],

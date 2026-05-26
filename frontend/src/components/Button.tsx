@@ -12,23 +12,24 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
 }
 
-const baseStyles = "px-5 py-2 rounded-2xl font-medium transition-all";
+const baseStyles =
+  "px-5 py-2 rounded-2xl font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2";
 
 const variants: Record<string, string> = {
   primary:
     baseStyles +
-    " border border-slate bg-softwhite hover:bg-slate hover:text-softwhite",
+    " border border-accent bg-accent text-surface shadow-sm hover:bg-accentHover",
   secondary:
     baseStyles +
-    " border border-charcoal bg-transparent text-charcoal hover:bg-charcoal hover:text-softwhite",
+    " border border-slate/70 bg-surface text-slate hover:border-accent hover:text-accent dark:bg-transparent dark:border-white/50 dark:text-white dark:hover:border-sage dark:hover:text-sage",
   blush:
     baseStyles +
-    " bg-blush text-charcoal cursor-pointer border-none hover:bg-blush/80",
+    " bg-blush text-charcoal cursor-pointer border border-blushHover hover:bg-blushHover",
   icon: "p-2 rounded-full text-charcoal dark:text-white bg-transparent border-none hover:bg-charcoal/10 transition-all", // for icon-only buttons
-  sage: "px-6 py-2 rounded font-medium bg-sage dark:bg-sage text-white hover:opacity-90 transition border-none", // for sage colored submit
+  sage: "px-6 py-2 rounded-full font-medium bg-sage text-charcoal hover:bg-sageHover transition border border-sage/70", // for sage colored submit
   contrastBlush:
     baseStyles +
-    " bg-softwhite text-charcoal border border-charcoal hover:bg-slate hover:text-softwhite", // high contrast for blush backgrounds
+    " bg-surface text-charcoal border border-slate/70 hover:border-accent hover:text-accent dark:bg-transparent dark:border-white/50 dark:text-white dark:hover:border-sage dark:hover:text-sage", // high contrast for blush backgrounds
 };
 
 export default function Button({

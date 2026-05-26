@@ -37,7 +37,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className="w-full fixed top-0 left-0 z-50 bg-white/60 dark:bg-charcoal/60 backdrop-blur-sm shadow-sm">
+    <header className="w-full fixed top-0 left-0 z-50 bg-surface/70 dark:bg-charcoal/75 backdrop-blur-md border-b border-slate/10 dark:border-white/10">
       <motion.nav
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
         initial={{ opacity: 0, y: -20 }}
@@ -47,10 +47,10 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           to="/"
-          className="text-xl sm:text-2xl font-playfair tracking-wide text-charcoal dark:text-white flex items-center gap-1"
+          className="text-xl sm:text-2xl font-playfair tracking-wide text-charcoal dark:text-white flex items-center gap-0"
         >
           <span className="font-bold">&lt; Melody</span>
-          <span className="text-blush">.dev /&gt;</span>
+          <span className="text-accent font-semibold">.dev /&gt;</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -61,12 +61,14 @@ export default function Navbar() {
               to={path}
               className={({ isActive }) =>
                 `relative group px-2 md:px-3 font-medium transition ${
-                  isActive ? "text-blush" : "hover:text-blush"
+                  isActive
+                    ? "text-accent dark:text-sage"
+                    : "hover:text-accent dark:hover:text-sage"
                 }`
               }
             >
               <span className="relative z-10">{label}</span>
-              <span className="absolute left-0 -bottom-0.5 h-[2px] w-full scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100 bg-blush" />
+              <span className="absolute left-0 -bottom-0.5 h-[2px] w-full scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100 bg-accent dark:bg-sage" />
             </NavLink>
           ))}
 
@@ -77,7 +79,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="hover:text-blush transition"
+              className="hover:text-accent transition"
             >
               <FaGithub size={18} />
             </a>
@@ -86,7 +88,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="hover:text-blush transition"
+              className="hover:text-accent transition"
             >
               <FaLinkedin size={18} />
             </a>
@@ -171,7 +173,7 @@ export default function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="md:hidden bg-white dark:bg-charcoal px-6 pt-4 pb-6 shadow-sm rounded-b-xl"
+            className="md:hidden bg-surface dark:bg-charcoal px-6 pt-4 pb-6 shadow-sm rounded-b-xl border-t border-slate/10 dark:border-white/10"
           >
             <div className="flex flex-col space-y-4 font-inter text-base text-charcoal dark:text-white">
               {navLinks.map(({ path, label }) => (
