@@ -25,7 +25,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="w-full md:w-1/2 h-1/2 md:h-full bg-white/90 dark:bg-charcoal/90 md:bg-transparent md:dark:bg-transparent backdrop-blur-sm md:backdrop-blur-none flex flex-col justify-center items-center md:items-start px-6 md:px-16 py-8 md:py-0 z-30 text-charcoal text-center md:text-left order-2 md:order-1 md:relative"
+        className="w-full md:w-1/2 h-1/2 md:h-full bg-white/90 dark:bg-charcoal/90 md:bg-transparent md:dark:bg-transparent backdrop-blur-sm md:backdrop-blur-none flex flex-col justify-center md:justify-start items-center md:items-start px-6 md:px-16 py-8 md:py-0 md:pt-10 z-30 text-charcoal text-center md:text-left order-2 md:order-1 md:relative"
       >
         <motion.h1
           initial={{ opacity: 0, y: 10 }}
@@ -47,7 +47,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="flex gap-4 justify-center md:justify-start"
+          className="flex gap-4 justify-center md:justify-start md:-ml-4"
         >
           <Link to="/projects">
             <Button
