@@ -5,13 +5,13 @@ import AboutSkills from "./AboutSkills";
 export default function AboutContent() {
   return (
     <section className="bg-offwhite dark:bg-charcoal text-charcoal dark:text-white py-20 px-6">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 md:gap-12">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
         {/* About Story: 3/4 */}
         <motion.div
-          className="md:w-3/4"
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.1 }}
+          className="lg:col-span-8"
+          initial={{ opacity: 0, x: -28, y: 18 }}
+          whileInView={{ opacity: 1, x: 0, y: 0 }}
+          viewport={{ once: true, amount: 0.28 }}
           transition={{ duration: 0.8 }}
         >
           <AboutStory />
@@ -19,10 +19,10 @@ export default function AboutContent() {
 
         {/* About Skills: 1/4 */}
         <motion.div
-          className="md:w-1/4"
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.1 }}
+          className="lg:col-span-4"
+          initial={{ opacity: 0, x: 28, y: 18 }}
+          whileInView={{ opacity: 1, x: 0, y: 0 }}
+          viewport={{ once: true, amount: 0.28 }}
           transition={{ duration: 0.8, delay: 0.15 }}
         >
           <div
