@@ -2,88 +2,125 @@ import { motion } from "framer-motion";
 import profileImg from "../../assets/profile.png";
 import { Link } from "react-router-dom";
 import Button from "../../components/Button";
-import DiagonalPanel from "../../components/DiagonalPanel";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[100vh] md:h-[84vh] lg:h-[82vh] overflow-hidden flex flex-col md:flex-row items-center bg-softwhite dark:bg-slate/80">
-      {/* Dark mode overlay for softer effect */}
-      <div className="hidden dark:block absolute inset-0 dark:bg-[#2f2f2f] bg-opacity-10 pointer-events-none z-0" />
+    <section className="relative w-full overflow-hidden bg-[#ebe2dc] dark:bg-[#2f2a29]">
 
-      {/* Diagonal Panel Animation - only on desktop */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.15 }}
-        className="hidden md:block"
-      >
-        <DiagonalPanel />
-      </motion.div>
-
-      {/* TEXT SIDE - appears first */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        className="w-full md:w-1/2 h-1/2 md:h-full bg-white/90 dark:bg-charcoal/90 md:bg-transparent md:dark:bg-transparent backdrop-blur-sm md:backdrop-blur-none flex flex-col justify-center md:justify-start items-center md:items-start px-6 md:px-16 lg:px-20 py-8 md:py-0 md:pt-12 z-30 text-charcoal text-center md:text-left order-2 md:order-1 md:relative"
-      >
-        <motion.h1
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-serif font-bold mb-4 text-slate dark:text-white"
-        >
-          Melody Cartwright
-        </motion.h1>
-        <motion.h2
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-xl md:text-3xl lg:text-[2rem] font-sans mb-6 text-slate dark:text-white"
-        >
-          Frontend Developer & React Enthusiast
-        </motion.h2>
+      {/* Desktop and up: true diagonal zones */}
+      <div className="hidden lg:block relative h-[88vh] min-h-[560px] max-h-[760px]">
+        <div className="absolute inset-0 z-10 pointer-events-none bg-[#ebe2dc]" />
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex gap-4 justify-center md:justify-start"
-        >
-          <Link to="/projects">
-            <Button
-              variant="primary"
-              className="dark:bg-accent dark:hover:bg-accentHover dark:text-softwhite"
-            >
-              View Projects
-            </Button>
-          </Link>
-          <Link to="/about">
-            <Button
-              variant="secondary"
-              className="dark:border-sage/50 dark:text-softwhite dark:hover:text-sage"
-            >
-              About Me
-            </Button>
-          </Link>
-        </motion.div>
-      </motion.div>
-
-      {/* IMAGE SIDE - appears after text */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: 0.25 }}
-        className="w-full md:w-1/2 h-1/2 md:h-full z-20 flex items-center md:items-end justify-center md:justify-end overflow-hidden order-1 md:order-2 md:pr-6 lg:pr-12 md:pb-4 lg:pb-8"
-      >
-        <motion.img
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.35 }}
-          src={profileImg}
-          alt="Melody Cartwright"
-          className="w-64 h-64 md:w-[58%] lg:w-[60%] md:h-auto aspect-square object-cover rounded-full shadow-lg mt-4 md:mt-0"
+          initial={{ x: "-35%", opacity: 0.9 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="absolute inset-0 z-20 bg-[#d9b8af] dark:bg-[#6f5a52]"
+          style={{ clipPath: "polygon(0 0, 100% 0, 0 100%)" }}
         />
-      </motion.div>
+
+        <div
+          className="absolute inset-0 z-30"
+          style={{ clipPath: "polygon(0 0, 100% 0, 0 100%)" }}
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.08 }}
+            className="h-full flex flex-col justify-start pt-16 lg:pt-20 pl-12 lg:pl-16 xl:pl-20 pr-10"
+          >
+            <h1 className="text-5xl lg:text-6xl xl:text-7xl leading-[0.95] font-serif font-bold mb-4 text-slate dark:text-white max-w-[560px]">
+              Melody Cartwright
+            </h1>
+            <h2 className="text-2xl lg:text-[1.6rem] font-sans mb-3 text-slate dark:text-white max-w-[560px] leading-tight">
+              Problem-first Frontend Developer with a MERN & Web Security foundation
+            </h2>
+            <p className="text-base lg:text-lg font-sans mb-7 text-slate/90 dark:text-white/90 tracking-[0.02em]">
+              React • Next.js • TypeScript
+            </p>
+            <div className="flex gap-4">
+              <Link to="/projects">
+                <Button
+                  variant="primary"
+                  className="border-accent bg-accent text-softwhite shadow-[0_4px_14px_rgba(122,62,86,0.25)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-accentHover hover:shadow-[0_8px_20px_rgba(100,51,71,0.30)] active:translate-y-0 active:shadow-sm dark:border-accent/80 dark:bg-accent dark:text-softwhite dark:shadow-[0_4px_14px_rgba(0,0,0,0.35)] dark:hover:bg-accentHover dark:hover:shadow-[0_8px_22px_rgba(0,0,0,0.45)]"
+                >
+                  View My Work
+                </Button>
+              </Link>
+              <Link to="/about">
+                <Button
+                  variant="secondary"
+                  className="border-blush/80 bg-offwhite text-accent shadow-[0_3px_10px_rgba(80,52,63,0.12)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-accent/40 hover:bg-blushHover/45 hover:text-accent hover:shadow-[0_8px_18px_rgba(80,52,63,0.18)] active:translate-y-0 active:shadow-sm dark:border-softwhite/35 dark:bg-softwhite/12 dark:text-softwhite dark:shadow-[0_3px_10px_rgba(0,0,0,0.3)] dark:hover:border-accentSoft/70 dark:hover:bg-softwhite/18 dark:hover:text-softwhite dark:hover:shadow-[0_8px_18px_rgba(0,0,0,0.42)]"
+                >
+                  About Me
+                </Button>
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+
+        <div
+          className="absolute inset-0 z-30"
+          style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.55, delay: 0.12 }}
+            className="h-full flex items-end justify-end pr-8 lg:pr-12 pb-12 lg:pb-16"
+          >
+            <img
+              src={profileImg}
+              alt="Melody Cartwright"
+              className="w-[28vw] max-w-[360px] min-w-[240px] aspect-square object-cover rounded-full shadow-xl"
+            />
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Mobile: stacked fallback */}
+      <div className="lg:hidden w-full">
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45 }}
+          className="bg-[#d9b8af]/92 dark:bg-[#6f5a52] px-6 py-14 text-center"
+        >
+          <h1 className="text-4xl leading-[0.95] font-serif font-bold mb-4 text-slate dark:text-white">
+            Melody Cartwright
+          </h1>
+          <h2 className="text-xl font-sans mb-2 text-slate dark:text-white leading-snug">
+            Problem-first Frontend Developer with a MERN & Web Security foundation
+          </h2>
+          <p className="text-sm sm:text-base font-sans mb-6 text-slate/90 dark:text-white/90 tracking-[0.02em]">
+            React • Next.js • TypeScript
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Link to="/projects">
+              <Button
+                variant="primary"
+                className="border-accent bg-accent text-softwhite shadow-[0_4px_14px_rgba(122,62,86,0.25)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-accentHover hover:shadow-[0_8px_20px_rgba(100,51,71,0.30)] active:translate-y-0 active:shadow-sm dark:border-accent/80 dark:bg-accent dark:text-softwhite dark:shadow-[0_4px_14px_rgba(0,0,0,0.35)] dark:hover:bg-accentHover dark:hover:shadow-[0_8px_22px_rgba(0,0,0,0.45)]"
+              >
+                View My Work
+              </Button>
+            </Link>
+            <Link to="/about">
+              <Button
+                variant="secondary"
+                className="border-blush/80 bg-offwhite text-accent shadow-[0_3px_10px_rgba(80,52,63,0.12)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-accent/40 hover:bg-blushHover/45 hover:text-accent hover:shadow-[0_8px_18px_rgba(80,52,63,0.18)] active:translate-y-0 active:shadow-sm dark:border-softwhite/35 dark:bg-softwhite/12 dark:text-softwhite dark:shadow-[0_3px_10px_rgba(0,0,0,0.3)] dark:hover:border-accentSoft/70 dark:hover:bg-softwhite/18 dark:hover:text-softwhite dark:hover:shadow-[0_8px_18px_rgba(0,0,0,0.42)]"
+              >
+                About Me
+              </Button>
+            </Link>
+          </div>
+        </motion.div>
+        <div className="bg-[#ebe2dc] dark:bg-[#2f2a29] flex items-center justify-center px-6 py-12">
+          <img
+            src={profileImg}
+            alt="Melody Cartwright"
+            className="w-64 h-64 aspect-square object-cover rounded-full shadow-xl"
+          />
+        </div>
+      </div>
     </section>
   );
 }
