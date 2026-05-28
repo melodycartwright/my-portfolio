@@ -3,15 +3,15 @@ import portrait from "../../assets/images/about-portrait.jpg";
 
 export default function AboutStory() {
   return (
-    <section className="bg-offwhite dark:bg-charcoal text-charcoal dark:text-white py-20 px-6">
+    <div className="text-charcoal dark:text-white">
       <motion.div
-        className="max-w-4xl mx-auto"
+        className="max-w-4xl"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-3xl md:text-4xl font-serif mb-8 text-left ml-11">
-          My Story
+        <h2 className="text-3xl md:text-4xl font-serif mb-8 text-left">
+          About Me
         </h2>
 
         <div className="text-lg leading-relaxed font-sans">
@@ -23,38 +23,44 @@ export default function AboutStory() {
           />
 
           <p className="mb-4">
-            I’m a frontend developer with a journey shaped by resilience,
-            creativity, and transformation.
+            I’m a frontend developer based in Stockholm, with hands-on
+            experience building and improving modern web applications using
+            React, Next.js, TypeScript and Tailwind CSS.
           </p>
           <p className="mb-4">
-            Originally from California, I moved to Sweden to support my
-            grandmother and start a new chapter in life. Along the way, I built
-            a family here and navigated challenges that tested me deeply — from
-            personal loss to major life changes, and the responsibility of
-            raising two amazing children with special needs.
+            My recent experience at NoA Ignite gave me the opportunity to
+            contribute to a production e-commerce platform across multiple
+            storefronts, including Intersport, Sport1 and Löplabbet. I worked
+            with CMS-driven frontend features using Sanity, GROQ and Zod,
+            following the flow from content modeling and data fetching to
+            validation, types and React rendering.
           </p>
           <p className="mb-4">
-            Through it all, I found my turning point in technology. Coding
-            became more than a career path — it became my outlet, my way to
-            create, and my anchor during some of the most turbulent times of my
-            life. It allowed me to channel my strong point of problem-solving,
-            giving me the perfect balance of logic and creativity.
+            What I enjoy most about development is understanding how systems
+            connect. I like tracing problems from the source, asking where the
+            issue exists, what is affected, and what solution will be the most
+            maintainable. That problem-first mindset has helped me become
+            stronger at debugging and working in larger codebases.
           </p>
           <p className="mb-4">
-            What drives me today is building digital experiences that feel
-            meaningful — interfaces that look good, work seamlessly, and
-            actually make life better for the people using them. Whether it’s a
-            journaling tool, a mental health platform, or helping a business
-            bring its vision online, I’m passionate about creating projects that
-            uplift and empower.
+            I also have a MERN stack foundation from my education, with
+            experience in Node.js, Express, MongoDB, REST APIs, authentication
+            and web security. Frontend is where I see my strongest direction,
+            but understanding backend logic helps me build with more clarity and
+            collaborate better across the product.
+          </p>
+          <p className="mb-4">
+            I care about writing clean, understandable code, communicating
+            clearly, and building digital experiences that are useful,
+            accessible and thoughtful. I’m still early in my career, but I’m
+            driven, curious and serious about growing into a strong developer.
           </p>
           <p className="font-semibold italic text-center mt-8">
-            If there’s one thing my journey has proven, it’s this: no matter how
-            chaotic life gets, I don’t stop. I build, I learn, I adapt — and I’m
-            just getting started.
+            "I build by understanding the problem first - then finding the
+            simplest solution that works well and lasts."
           </p>
         </div>
       </motion.div>
-    </section>
+    </div>
   );
 }
