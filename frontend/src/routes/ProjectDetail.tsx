@@ -10,7 +10,7 @@ export default function ProjectDetail() {
     return (
       <div className="text-center py-20 text-charcoal dark:text-softwhite bg-softwhite dark:bg-charcoal min-h-screen">
         <p>Project not found.</p>
-        <Link to="/projects" className="underline text-accent dark:text-sage">
+        <Link to="/projects" className="underline text-accent dark:text-accentSoft">
           ← Back to Projects
         </Link>
       </div>
@@ -54,7 +54,7 @@ export default function ProjectDetail() {
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2 text-sm font-medium text-sage border border-sage rounded-full hover:bg-sage hover:text-white dark:hover:text-charcoal transition-all duration-300"
+              className="inline-flex items-center px-4 py-2 text-sm font-medium text-accent border border-accent/70 rounded-full hover:bg-accent hover:text-white dark:text-accentSoft dark:border-accentSoft/70 dark:hover:bg-accentSoft dark:hover:text-charcoal transition-all duration-300"
             >
               Live Site ↗
             </a>
@@ -66,7 +66,7 @@ export default function ProjectDetail() {
       <div className="absolute bottom-6 left-6">
         <Link
           to="/projects"
-          className="text-sm text-accent dark:text-sage hover:underline transition"
+          className="text-sm text-accent dark:text-accentSoft hover:underline transition"
         >
           ← Back to Projects
         </Link>

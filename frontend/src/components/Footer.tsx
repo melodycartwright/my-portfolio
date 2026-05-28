@@ -16,7 +16,7 @@ const Footer = () => {
           rel="noopener noreferrer"
           aria-label="GitHub"
         >
-          <Github className="w-5 h-5 text-slate/80 dark:text-white hover:text-accent dark:hover:text-sage transition" />
+          <Github className="w-5 h-5 text-slate/80 dark:text-white hover:text-accent dark:hover:text-accentSoft transition" />
         </a>
         <a
           href="https://www.linkedin.com/in/melody-cartwright-5ab18a1b6"
@@ -24,7 +24,7 @@ const Footer = () => {
           rel="noopener noreferrer"
           aria-label="LinkedIn"
         >
-          <Linkedin className="w-5 h-5 text-slate/80 dark:text-white hover:text-accent dark:hover:text-sage transition" />
+          <Linkedin className="w-5 h-5 text-slate/80 dark:text-white hover:text-accent dark:hover:text-accentSoft transition" />
         </a>
         {/* Add more icons here in future if needed */}
       </div>
@@ -33,7 +33,7 @@ const Footer = () => {
         <a
           href="/Melody-Cartwright-CV-English.pdf"
           download
-          className="hover:text-accent dark:hover:text-sage transition"
+          className="hover:text-accent dark:hover:text-accentSoft transition"
         >
           CV (English)
         </a>

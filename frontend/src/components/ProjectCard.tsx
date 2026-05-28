@@ -77,7 +77,7 @@ export default function ProjectCard({
             <div className="flex-grow space-y-3">
               <h3 className="text-xl font-serif font-semibold relative inline-block group-hover:text-slate-800">
                 {title}
-                <span className="block h-[2px] w-0 bg-sage group-hover:w-full transition-all duration-300"></span>
+                <span className="block h-[2px] w-0 bg-accent group-hover:w-full transition-all duration-300"></span>
               </h3>
 
               <p className="text-sm text-gray-700 dark:text-white font-sans">
@@ -110,7 +110,7 @@ export default function ProjectCard({
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-sage border border-sage rounded-full hover:bg-sage hover:text-white dark:hover:text-charcoal transition-all duration-300"
+                  className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-accent border border-accent/70 rounded-full hover:bg-accent hover:text-white dark:text-accentSoft dark:border-accentSoft/70 dark:hover:bg-accentSoft dark:hover:text-charcoal transition-all duration-300"
                   onClick={(e) => e.stopPropagation()}
                 >
                   Live Site ↗
@@ -126,7 +126,7 @@ export default function ProjectCard({
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-sage border border-sage rounded-full hover:bg-sage hover:text-white dark:hover:text-charcoal transition-all duration-300 whitespace-nowrap"
+                className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-accent border border-accent/70 rounded-full hover:bg-accent hover:text-white dark:text-accentSoft dark:border-accentSoft/70 dark:hover:bg-accentSoft dark:hover:text-charcoal transition-all duration-300 whitespace-nowrap"
                 onClick={(e) => e.stopPropagation()}
               >
                 Live Site ↗
@@ -146,7 +146,7 @@ export default function ProjectCard({
                 className="group text-2xl font-serif font-semibold relative inline-block w-fit"
               >
                 {title}
-                <span className="block h-[2px] w-0 bg-sage group-hover:w-full transition-all duration-300"></span>
+                <span className="block h-[2px] w-0 bg-accent group-hover:w-full transition-all duration-300"></span>
               </Link>
 
               <p className="text-sm text-gray-700 dark:text-softwhite font-sans line-clamp-6 leading-relaxed">
@@ -173,7 +173,7 @@ export default function ProjectCard({
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-sage border border-sage rounded-full hover:bg-sage hover:text-white dark:hover:text-charcoal transition-all duration-300"
+                  className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-accent border border-accent/70 rounded-full hover:bg-accent hover:text-white dark:text-accentSoft dark:border-accentSoft/70 dark:hover:bg-accentSoft dark:hover:text-charcoal transition-all duration-300"
                 >
                   Live Site ↗
                 </a>

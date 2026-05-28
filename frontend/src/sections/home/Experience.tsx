@@ -35,7 +35,7 @@ export default function Experience() {
             value thoughtful interfaces, accessibility, and user trust.
           </motion.p>
 
-          <motion.blockquote className="italic text-slate/85 dark:text-gray-200 border-l-4 border-sage pl-4 font-serif hover:text-slate dark:hover:text-sage hover:translate-x-1 transition-all duration-300">
+          <motion.blockquote className="italic text-slate/85 dark:text-gray-200 border-l-4 border-accent/50 pl-4 font-serif hover:text-slate dark:hover:text-accentSoft hover:translate-x-1 transition-all duration-300">
             “Design isn’t just what it looks like and feels like — design is how
             it works.”
             <span className="block mt-2 text-sm text-gray-500 dark:text-gray-400">

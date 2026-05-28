@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function ContactSection() {
   return (
     <motion.section
-      className="bg-sage/25 dark:bg-softwhite/10 backdrop-blur-sm py-16 px-6 text-center border-y border-slate/10 dark:border-white/10"
+      className="bg-blushHover/25 dark:bg-softwhite/10 backdrop-blur-sm py-16 px-6 text-center border-y border-slate/10 dark:border-white/10"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
