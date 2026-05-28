@@ -15,6 +15,7 @@ module.exports = {
         slate: "#30364c",
         accent: "#7a3e56",
         accentHover: "#643347",
+        accentSoft: "#c89bae",
         blushHover: "#dfc0c5",
         sageHover: "#b9ccc4",
       },

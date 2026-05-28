@@ -49,8 +49,8 @@ export default function Navbar() {
           to="/"
           className="text-xl sm:text-2xl font-playfair tracking-wide text-charcoal dark:text-white flex items-center gap-0"
         >
-          <span className="font-bold">&lt; Melody</span>
-          <span className="text-accent font-semibold">.dev /&gt;</span>
+          <span className="font-bold">&lt; Melody </span>
+          <span className="text-accent font-semibold">/&gt;</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -62,13 +62,13 @@ export default function Navbar() {
               className={({ isActive }) =>
                 `relative group px-2 md:px-3 font-medium transition ${
                   isActive
-                    ? "text-accent dark:text-sage"
-                    : "hover:text-accent dark:hover:text-sage"
+                    ? "text-accent dark:text-accentSoft"
+                    : "hover:text-accent dark:hover:text-accentSoft"
                 }`
               }
             >
               <span className="relative z-10">{label}</span>
-              <span className="absolute left-0 -bottom-0.5 h-[2px] w-full scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100 bg-accent dark:bg-sage" />
+              <span className="absolute left-0 -bottom-0.5 h-[2px] w-full scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100 bg-accent dark:bg-accentSoft" />
             </NavLink>
           ))}
 
