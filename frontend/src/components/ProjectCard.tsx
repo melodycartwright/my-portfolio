@@ -46,7 +46,7 @@ export default function ProjectCard({
     <motion.div
       whileHover={{ scale: 1.02 }}
       className={`bg-white dark:bg-[#2f2f2f] dark:text-white shadow-md rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg ${layoutClass} ${
-        isPreview ? "h-[500px]" : "h-[500px]"
+        isPreview ? "min-h-[500px]" : "min-h-[500px]"
       } ${isStacked ? "md:flex md:flex-row md:h-[300px]" : ""}`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
