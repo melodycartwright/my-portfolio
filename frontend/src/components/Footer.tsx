@@ -38,14 +38,6 @@ const Footer = () => {
           CV (English)
         </a>
       </div>
-      <div className="mt-4">
-        <Link
-          to="/contact"
-          className="inline-block px-5 py-2 text-sm font-medium bg-accent text-softwhite rounded-full border border-accent hover:bg-accentHover transition"
-        >
-          Contact Me
-        </Link>
-      </div>
     </footer>
   );
 };
